@@ -16,7 +16,9 @@ constructor(props){
   }
 }
 
-
+birthday(){
+  
+}
 
 
 
