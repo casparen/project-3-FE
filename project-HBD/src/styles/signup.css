@@ -1,0 +1,9 @@
+
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border: solid black 1px;
+  width: 5cm;
+  margin: auto;
+}
