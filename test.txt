@@ -1,2 +1,9 @@
 twe8ywehfigyu
+<<<<<<< HEAD
 alberto updated front end branch 
+=======
+
+
+
+updated, from my caspar-frontend branch 
+>>>>>>> 509f1c9881f216cdb60f945e0c12179a63441f2d
