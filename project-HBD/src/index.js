@@ -22,6 +22,6 @@ ReactDOM.render((
       <Route path="/splash" component={Splash}/>
     </Route>
   </Router>
-),
-  document.getElementById('root')
+)
+,document.getElementById('root')
 );
