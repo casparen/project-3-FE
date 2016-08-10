@@ -10,7 +10,6 @@ import SignUp from './components/signup';
 import Splash from './components/splash';
 import './styles/index.css';
 
-
 /* browserHistory keeps track of where you are on the App */
 ReactDOM.render((
   <Router history={browserHistory}>
