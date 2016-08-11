@@ -13,11 +13,11 @@ import Message from './components/message.js'
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path='/' component={Splash}/>
-        <Route path='/app' component={App}>
-            <Route path='/allProfiles' component={Dashboard}/>
+          <Route path='/app' component={App}>
+            <Route path='/dashboard' component={Dashboard}/>
             <Route path='/message' component={Message}/>
             <Route path='/profile' component={Profile}/>
-        </Route>
+          </Route>
     </Router>
     , document.getElementById('root')
 );

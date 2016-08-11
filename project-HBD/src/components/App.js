@@ -6,19 +6,15 @@ class App extends Component {
         super(props);
     }
     render() {
+      console.log("APP", this.props);
         return (
             <div>
-
-                <navigation>
-                    <Link to='/allProfiles'>
-                        <button>Dashboard</button>
-                    </Link>
-                    <Link to='/profile'>
-                        <button>Your profile</button>
-                    </Link>
-                </navigation>
-                <h4>I am App</h4>
-                {this.props.children}
+              <navigation>
+                <Link to='/dashboard'><button>Dashboard</button></Link>
+                <Link to='/profile'><button>Your profile</button></Link>
+              </navigation>
+              <h4>I am App</h4>
+          {this.props.children}
             </div>
         )
     }
