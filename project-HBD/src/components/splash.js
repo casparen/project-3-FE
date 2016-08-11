@@ -9,9 +9,10 @@ class Splash extends Component {
         this.state = {
             status: '',
             accessToken: '',
-            
+
         }
     }
+
     responseFacebook = (response) => {
         console.log(response);
         if (response.status) {
@@ -21,6 +22,7 @@ class Splash extends Component {
         }
 
     };
+
     render() {
         if (this.state.status === "not_authorized") {
             console.log("user not authorized")
