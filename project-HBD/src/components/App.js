@@ -19,7 +19,6 @@ class App extends Component {
                 <h4>I am App</h4>
                 {this.props.children}
             </div>
-
         )
     }
 }
