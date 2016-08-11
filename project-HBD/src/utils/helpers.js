@@ -13,9 +13,10 @@ export default {
         return fetch('https://happybday-d595a.firebaseio.com/ga/wdi/robots.json', fetchSettings)
             .then(response => response.json())
     },
-    checkForMatch: function (email) {
+
+    checkForMatch: function () {
         const fetchSettings = {method: 'GET'};
-        return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/${email}.json`, fetchSettings)
+        return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/.json`, fetchSettings)
             .then(response => response.json())
     },
 }

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import FacebookLogin from 'react-facebook-login';
-import {Link} from "react-router";
-// import helpers from "../utils/helpers";
+import _ from "lodash";
+import App from "./App";
+import helpers from "../utils/helpers";
 
 class Splash extends Component {
     constructor(props) {
@@ -9,35 +10,49 @@ class Splash extends Component {
         this.state = {
             status: '',
             accessToken: '',
-        }
+            email: '',
+            user: {}
+        };
     };
+
     responseFacebook = (response) => {
         console.log(response);
         if (response.status) {
             this.setState({status: response.status})
         } else if (response.accessToken) {
-            this.setState({accessToken: response.accessToken})
+            window.localStorage.setItem('accessToken', response.accessToken);
+            this.setState({
+                email: response.email,
+                id: response.id
+            });
+            helpers.checkForMatch()
+                .then(res => {
+                    let user = _.values(res).filter(each => each.email === this.state.email);
+                    console.log("userinfo: ", user[0]);
+                    this.setState({user: user[0]})
+                })
         }
     };
     render() {
         if (this.state.status === "not_authorized") {
-            console.log("user not authorized")
-        } else if (this.state.accessToken.length > 0) {
-            console.log("got Access Token")
+            console.log("user not authorized");
+        } else if (window.localStorage.getItem("accessToken")) {
+            console.log("got access token!");
+            return (
+                <App />
+            )
         }
         return (
             <div>
                 <h1>this is splash</h1>
-                <Link to='/dashboard'>
-                    <FacebookLogin
-                        appId="1822141354680309"
-                        autoLoad={true}
-                        fields="name,email,picture"
-                        callback={this.responseFacebook}
-                        cssClass="my-facebook-button-class"
-                        icon="fa-facebook"
-                    />
-                </Link>
+                <FacebookLogin
+                    appId="1822141354680309"
+                    autoLoad={true}
+                    fields="name,email,picture"
+                    callback={this.responseFacebook}
+                    cssClass="my-facebook-button-class"
+                    icon="fa-facebook"
+                />
             </div>
         )
     }
