@@ -19,7 +19,7 @@ class Splash extends Component {
             this.setState({status: response.status})
         } else if (response.accessToken) {
             this.setState({accessToken: response.accessToken})
-            
+
         }
 
     };
