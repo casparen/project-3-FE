@@ -1,24 +1,21 @@
-import React, { Component } from 'react';
-import '../styles/App.css';
+import React, { Component } from 'react'
 import { Link } from 'react-router'
-import Signup from './signup.js';
-import Splash from './splash.js';
-import Profile from './profile.js';
-import Message from './message.js';
 
 
-class App extends Component {
-  render() {
+
+class Dashboard extends Component {
+  render(){
     return (
-      <div className="App">
-        <h2>App</h2>
-        <Signup />
-        <Profile />{/*a modal*/}
-        <Message />
+      <div>
+        <navigation>
+            <Link to='/profile'><button>Your profile</button></Link>
+            <Link to='/allProfiles'><button>View all</button></Link>
+        </navigation>
+          <h4>I am App</h4>
         {this.props.children}
       </div>
-    );
+
+    )
   }
 }
-
-export default App;
+export default Dashboard
