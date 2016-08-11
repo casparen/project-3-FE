@@ -9,25 +9,20 @@ class Splash extends Component {
         this.state = {
             status: '',
             accessToken: '',
-
         }
-    }
-
+    };
     responseFacebook = (response) => {
         console.log(response);
         if (response.status) {
             this.setState({status: response.status})
         } else if (response.accessToken) {
             this.setState({accessToken: response.accessToken})
-
         }
-
     };
-
     render() {
         if (this.state.status === "not_authorized") {
             console.log("user not authorized")
-        } else if (this.state.accessToken) {
+        } else if (this.state.accessToken.length > 0) {
             console.log("got Access Token")
         }
         return (
