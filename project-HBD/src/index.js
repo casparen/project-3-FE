@@ -2,13 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router'
 import './styles/index.css';
-import Splash from './components/splash.js'
-<<<<<<< HEAD
-import Dashboard from './components/Dashboard.js';
-=======
-import Dashboard from './components/App.js'
->>>>>>> mimi_fe
-
+import Splash from './components/splash'
+import App from './components/App';
 import Profile from './components/profile.js'
 import AllProfiles from './components/allProfiles.js'
 import Message from './components/message.js'
@@ -18,7 +13,7 @@ import Message from './components/message.js'
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path='/' component={Splash}/>
-        <Route path='/app' component={Dashboard}>
+        <Route path='/app' component={App}>
             <Route path='/allProfiles' component={AllProfiles}/>
             <Route path='/message' component={Message}/>
             <Route path='/profile' component={Profile}/>
