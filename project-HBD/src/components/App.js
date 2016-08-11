@@ -9,11 +9,11 @@ class App extends Component {
         return (
             <div>
                 <navigation>
+                    <Link to='/allProfiles'>
+                        <button>Dashboard</button>
+                    </Link>
                     <Link to='/profile'>
                         <button>Your profile</button>
-                    </Link>
-                    <Link to='/allProfiles'>
-                        <button>View all</button>
                     </Link>
                 </navigation>
                 <h4>I am App</h4>
