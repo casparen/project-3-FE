@@ -12,16 +12,17 @@ import './styles/index.css';
 
 /* browserHistory keeps track of where you are on the App */
 ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <Route path="/dashboard" component={Dashboard}/>
-      <Route path="/login" component={LogIn}/>
-      <Route path="/message" component={Message}/>
-      <Route path="/profile" component={Profile}/>
-      <Route path="/signup" component={SignUp}/>
-      <Route path="/splash" component={Splash}/>
-    </Route>
-  </Router>
-)
-,document.getElementById('root')
+    <Router history={browserHistory}>
+      <Route path="/" component={Splash}/>
+
+        <Route path="/home" component={App}>
+          <Route path="/login" component={LogIn}/>
+          <Route path="/signup" component={SignUp}/>
+          <Route path="/dashboard" component={Dashboard}/>
+          <Route path="/message" component={Message}/>
+          <Route path="/profile" component={Profile}/>
+        </Route>
+    </Router>
+  )
+  ,document.getElementById('root')
 );
