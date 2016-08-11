@@ -30,7 +30,7 @@ render(){
 
   return (
     <div>
-        <img src={img} alt="giphy"></img>
+        <img src={img} alt="giphy"></img><br/>
         <button onClick={(event) => this.onClick(event)}>Refresh</button>
     </div>
     );
