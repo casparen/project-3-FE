@@ -17,20 +17,10 @@ class Dashboard extends Component {
             })
     }
     render() {
-        if (this.state.response.length > 0) {
-            const listUsers = user.map((each, i) => {
-                return (
-                    <li key={i}>
-                        {each}
-                    </li>
-                )
-            })
-        };
         return (
             <div>
                 <h1>View all profiles</h1>
                 <ul>
-                    {listUsers}
                 </ul>
                 <Link to='/message'>
                     <button>Link to message</button>
