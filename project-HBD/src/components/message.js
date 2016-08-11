@@ -34,6 +34,7 @@ render(){
         <img src={img} alt="giphy"></img><br/>
         <textarea rows="6" cols="50"></textarea><br />
         <button onClick={(event) => this.onClick(event)}>Refresh</button>
+        <button onSubmit={(event) => this.onSubmit(event)}>Submit</button>
     </div>
     );
   }
