@@ -5,7 +5,7 @@ import './styles/index.css';
 import Splash from './components/splash'
 import App from './components/App';
 import Profile from './components/profile.js'
-import AllProfiles from './components/allProfiles.js'
+import Dashboard from './components/Dashboard.js'
 import Message from './components/message.js'
 
 
@@ -14,7 +14,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
         <Route path='/' component={Splash}/>
         <Route path='/app' component={App}>
-            <Route path='/allProfiles' component={AllProfiles}/>
+            <Route path='/allProfiles' component={Dashboard}/>
             <Route path='/message' component={Message}/>
             <Route path='/profile' component={Profile}/>
         </Route>
