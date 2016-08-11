@@ -61,7 +61,6 @@ class Splash extends Component {
                       cssClass="my-facebook-button-class"
                       icon="fa-facebook"
                   />
-    
             </div>
         )
     }

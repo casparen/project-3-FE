@@ -6,7 +6,7 @@ class App extends Component {
         super(props);
     }
     render() {
-      console.log("APP", this.props);
+      // console.log("APP", this.props);
         return (
             <div>
               <navigation>
