@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router'
 import './styles/index.css';
 import Splash from './components/splash.js'
-import App from './components/app.js'
+import Dashboard from './components/App.js'
 
 import Profile from './components/profile.js'
 import AllProfiles from './components/allProfiles.js'
