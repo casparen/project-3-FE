@@ -5,7 +5,6 @@ class Message extends Component {
 constructor(props){
   super();
   this.state= {
-    text: "",
     response: []
   }
 }
@@ -21,13 +20,18 @@ onClick(event){
 onSubmit(event){
   event.preventDefault()
   console.log('submit');
-
+  const data = {
+    img: "",
+    textArea: ""
+  }
+  GetGiphy.submitMessage(data).then((res) => {
+    console.log("send", res);
+  })
 }
 
 render(){
   const result = this.state.response
   const img = result.fixed_height_downsampled_url
-
 
   return (
     <div>
