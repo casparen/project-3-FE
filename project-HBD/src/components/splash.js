@@ -19,6 +19,7 @@ class Splash extends Component {
             this.setState({status: response.status})
         } else if (response.accessToken) {
             this.setState({accessToken: response.accessToken})
+            
         }
 
     };
@@ -26,8 +27,8 @@ class Splash extends Component {
     render() {
         if (this.state.status === "not_authorized") {
             console.log("user not authorized")
-        } else if (this.state.accessToken > 0) {
-
+        } else if (this.state.accessToken) {
+            console.log("got Access Token")
         }
         return (
             <div>
