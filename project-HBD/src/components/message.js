@@ -10,17 +10,18 @@ constructor(props){
   }
 }
 
-onChange(event){
-  event.preventDefault()
-  this.setState({ text: event.target.value });
-}
-
 onClick(event){
   event.preventDefault()
   console.log('click');
-  GetGiphy.getRandom(this.state.text).then((res) => {
+  GetGiphy.getRandom(this.state.response).then((res) => {
     this.setState({response: res.data})
   });
+}
+
+onSubmit(event){
+  event.preventDefault()
+  console.log('submit');
+
 }
 
 render(){
@@ -31,6 +32,7 @@ render(){
   return (
     <div>
         <img src={img} alt="giphy"></img><br/>
+        <textarea rows="6" cols="50"></textarea><br />
         <button onClick={(event) => this.onClick(event)}>Refresh</button>
     </div>
     );
