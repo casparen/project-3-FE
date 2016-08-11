@@ -1,7 +1,7 @@
 export default {
     getRandom: function (tag) {
         const fetchSettings = {method: 'GET'}
-        return fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=happy%20birthday' + tag, fetchSettings)
+        return fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=happy%20birthday', fetchSettings)
             .then((response) => response.json())
     },
     addToDB: function (data) {
