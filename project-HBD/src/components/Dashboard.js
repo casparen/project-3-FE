@@ -20,6 +20,9 @@ class Dashboard extends Component {
             <div>
                 <h1>View all profiles</h1>
                 <Link to='/message'>
+                    <ul>
+                        
+                    </ul>
                     <button>Link to message</button>
                 </Link>
             </div>
