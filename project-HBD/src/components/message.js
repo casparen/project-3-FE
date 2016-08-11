@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import GetThis from '../utils/helpers.js';
 
 class Message extends Component {
   render() {
