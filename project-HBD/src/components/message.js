@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GetGiphy from '../utils/helpers.js';
+import Helpers from '../utils/helpers.js';
 
 class Message extends Component {
 constructor(props){
@@ -18,12 +18,19 @@ newMessage(event) {
 handleSubmit(event) {
   event.preventDefault()
   console.log(this.state.text);
+  // Helpers.newPost(this.state)
+  // .then((res) => {
+  //   this.setState({
+  //     response:res.data
+  //   });
+  //     console.log(res.data);
+  // })
   }
 
 onClick(event){
   event.preventDefault()
   console.log('click');
-  GetGiphy.getRandom(this.state.response).then((res) => {
+  Helpers.getRandom(this.state.response).then((res) => {
     this.setState({response: res.data})
     });
   }

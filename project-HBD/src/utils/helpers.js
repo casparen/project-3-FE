@@ -19,4 +19,9 @@ export default {
         return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/.json`, fetchSettings)
             .then(response => response.json())
     },
+    // newPost: function(message) {
+    //     const fetchSettings = {method: "PUT"};
+    //     return fetch('', {message}, fetchSettings)
+    //     .then((response) => response.json());
+    // },
 }
