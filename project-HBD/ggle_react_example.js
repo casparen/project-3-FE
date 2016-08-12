@@ -13,24 +13,9 @@ class App extends Component {
       console.log('Email: ' + profile.getEmail());
     }
 
-// handleClick () {
-//   console.log('clicks')
-// }
-
-// renderGoogleLoginButton () {
-//    console.log('rendering google signin button')
-//    gapi.signin2.render('g-signin2', {
-//      'scope': 'https://www.googleapis.com/auth/plus.login',
-//      'width': 200,
-//      'height': 50,
-//      'longtitle': true,
-//      'theme': 'light',
-//      'onsuccess': this.onSignIn
-//    })
-//  }
   componentDidMount() {
      gapi.signin2.render('g-signin2', {
-       'scope': 'https://www.googleapis.com/auth/plus.login',
+       'scope': 'email',
        'width': 200,
        'height': 50,
        'longtitle': true,
@@ -38,20 +23,7 @@ class App extends Component {
        'onsuccess': this.onSignIn
      })
   }
-
- // componentDidMount () {
- //  //  window.addEventListener('google-loaded',this.renderGoogleLoginButton);
- //  console.log('rendering google signin button')
- //  gapi.signin2.render('g-signin2', {
- //    'scope': 'https://www.googleapis.com/auth/plus.login',
- //    'width': 200,
- //    'height': 50,
- //    'longtitle': true,
- //    'theme': 'light',
- //    'onsuccess': this.onSignIn
- //  })
- // }
-
+  //if problem wth async then set time out
 
   signOut() {
     console.log('signout');
@@ -72,7 +44,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <div className="g-signin2" id="g-signin2"></div>
+        <div id="g-signin2"></div>
           <a href="#" onClick={ this.signOut }>Sign out</a>
 
         </div>
@@ -85,5 +57,7 @@ class App extends Component {
 export default App;
 
 
+//http://stackoverflow.com/questions/31610461/using-google-sign-in-button-with-react
+//http://stackoverflow.com/questions/31144874/gapi-is-not-defined-google-sign-in-issue-with-gapi-auth2-init
 //http://stackoverflow.com/questions/31640234/using-google-sign-in-button-with-react-2
 //https://developers.google.com/identity/sign-in/web/sign-in
