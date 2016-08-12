@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import '../styles/form.css';
 import Helper from '../utils/helpers.js';
-import {Link} from 'react-router';
+import {Link, Router, Route, browserHistory} from 'react-router'
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
@@ -27,9 +28,6 @@ class SignUpForm extends Component {
         })
     }
 
-    birthday() {
-
-    }
 
 
     handleSubmit(event) {
@@ -61,8 +59,7 @@ class SignUpForm extends Component {
             Helper.addToDB(data).then((res) => {
               console.log(res);
             })
-
-
+return browserHistory.push('/app')
     }
 
     render() {
@@ -115,7 +112,7 @@ class SignUpForm extends Component {
                         <option value="robots">robots</option>
                         <option value="purple rain">purple rain</option>
                     </select>
-                      <button onClick={(event) => this.handleSubmit(event)}><Link to='/app'>SUBMIT</Link></button>
+                      <button onClick={(event) => this.handleSubmit(event)}></button>
                 </form>
             </div>
 
