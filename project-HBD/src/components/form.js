@@ -16,7 +16,7 @@ class SignUpForm extends Component {
             day: "",
             month: "",
             year: "",
-            programm: "",
+            program: "",
             cohort: ""
         }
         Helper.getFbUser().then((res) => {
@@ -44,16 +44,16 @@ class SignUpForm extends Component {
         // console.log("programm", this.state.programm);
         // console.log("corhort", this.state.cohort);
         console.log(this.state.name);
-        const data = {}
-        data[this.state.fbUser.id] = {
+        // const data = {}
+        const data = {
               name: this.state.name,
               email: this.state.email,
               dob: this.state.day + this.state.month,
-              programm: this.state.programm,
-              corhort: this.state.cohort,
+              program: this.state.programm,
+              cohort: this.state.cohort,
               id: this.state.fbUser.id,
               accessToken: this.state.fbUser.accessToken
-            }
+            };
 
             Helper.addToDB(data).then((res) => {
               console.log(res);
