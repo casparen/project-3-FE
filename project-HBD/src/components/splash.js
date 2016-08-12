@@ -86,7 +86,7 @@ class Splash extends Component {
            else if (this.state.fbStatus === 'true' && this.state.matchStatus === 'true'){
              {/*return browserHistory.push('/app')*/}
              return (
-               <App fbObject={fbObject} />
+               <App fbObject={this.state.fbObject} />
              )
            }
           //  else if (window.localStorage.getItem("accessToken") && )
@@ -102,7 +102,6 @@ class Splash extends Component {
                          cssClass="my-facebook-button-class"
                          icon="fa-facebook"
                      />
-
                </div>
            )
        }

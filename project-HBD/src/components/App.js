@@ -8,7 +8,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         console.log("I am App", this.props);
-          return browserHistory.push('/splash')
+
     }
     render() {
         return (
@@ -19,7 +19,7 @@ class App extends Component {
                 <Link to='/test'><button>link to test</button></Link>
               </navigation>
               <h4>I am App</h4>
-                {this.props.children}
+              {this.props.children}
             </div>
         )
     }
