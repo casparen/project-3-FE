@@ -1,11 +1,9 @@
-import React, {Component} from 'react'
-import '../styles/signup.css'
-import Helper from '../utils/helpers.js'
-import {Link} from 'react-router'
-import Form from 'muicss/lib/react/form';
-import Input from 'muicss/lib/react/input';
-import Textarea from 'muicss/lib/react/textarea';
-import Button from 'muicss/lib/react/button';
+import React, {Component} from 'react';
+import '../styles/form.css';
+import Helper from '../utils/helpers.js';
+import {Link} from 'react-router';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 class SignUpForm extends Component {
     constructor(props) {
@@ -103,7 +101,7 @@ class SignUpForm extends Component {
                     <select onChange={(event) => this.setState({programm: event.target.value})}>
                         <option>Please Choose</option>
                         <option value="WDI">WDI</option>
-                        <option value="test">test</option>
+                        <option value="UXI">UXI</option>
                     </select>
 
                     <select onChange={(event) => this.setState({cohort: event.target.value})}>
@@ -111,7 +109,7 @@ class SignUpForm extends Component {
                         <option value="robots">robots</option>
                         <option value="purple rain">purple rain</option>
                     </select>
-                      <Button color="primary" onClick={(event) => this.handleSubmit(event)}><Link to='/app'>SUBMIT</Link></Button>
+                      <button onClick={(event) => this.handleSubmit(event)}><Link to='/app'>SUBMIT</Link></button>
                 </form>
             </div>
 
