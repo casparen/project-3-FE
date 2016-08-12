@@ -3,8 +3,8 @@ import FacebookLogin from 'react-facebook-login';
 import _ from "lodash";
 import App from "./App";
 import helpers from "../utils/helpers";
-import Form from './form.js'
-import {Router, Route, browserHistory} from 'react-router'
+// import Form from './form.js'
+import {browserHistory} from 'react-router'
 
 class Splash extends Component {
     constructor(props) {
@@ -21,156 +21,84 @@ class Splash extends Component {
     };
 
     responseFacebook = (response) => {
-          //  console.log(response);
-           if (response.accessToken.length > 0) {
-               this.setState({fbStatus: 'true',
-                              fbEmail: response.email,
-                              fbObject: response
-               })
+        //  console.log(response);
+        if (response.accessToken.length > 0) {
+            this.setState({
+                fbStatus: 'true',
+                fbEmail: response.email,
+                fbObject: response
+            });
+            console.log("fbStataus:", this.state.fbStatus);
+            console.log("sent data to db");
+        }
 
-               console.log("fbStataus:", this.state.fbStatus);
-               console.log("sent data to db");
-           }
-
-            if (this.state.fbStatus === 'true'){
-              helpers.checkForMatch().then(res => {
-                      let user = _.values(res).filter(each => each.email === this.state.fbEmail);
-                      // console.log("userinfo: ", user[0]);
-                      console.log("user;",user, user.length);
-                      // console.log("no matching data");
-                      if(user.length <= 0){
-                        this.setState({user: user[0],
-                                     matchStatus: "false"
-                                 })
-                      }
-                      else if (user.length >= 0) {
-                        this.setState({user: user[0],
-                                     matchStatus: "true"
-                                      })
-                      }
-
-
-                   })
-            }
-          }
+        if (this.state.fbStatus === 'true') {
+            helpers.checkForMatch().then(res => {
+                let user = _.values(res).filter(each => each.email === this.state.fbEmail);
+                // console.log("userinfo: ", user[0]);
+                console.log("user;", user, user.length);
+                // console.log("no matching data");
+                if (user.length <= 0) {
+                    this.setState({
+                        user: user[0],
+                        matchStatus: "false"
+                    })
+                }
+                else if (user.length >= 0) {
+                    this.setState({
+                        user: user[0],
+                        matchStatus: "true"
+                    })
+                }
 
 
+            })
+        }
+    }
 
 
-
-
-       render() {
-
-          //  if (this.state.status === "not_authorized") {
-          //      console.log("user not authorized");
-          //  }
-           if (this.state.fbStatus === 'true' && this.state.matchStatus === 'false') {
-               console.log("go to form");
-               const res = this.state.fbObject
-               {/*const data = {}
-               data['fbUser'] = {
-                  accessToken: res.accessToken,
-                  name: res.name,
-                  email: res.email,
-                  id: res.id,
-                  url: res.picture.data.url
-               }
-               helpers.addFbDB(data).then((res) => {
-
-               })*/}
-
-             return browserHistory.push('/form')
-
-             {/*return browserHistory.push('/form')*/}
-           }
-           else if (this.state.fbStatus === 'true' && this.state.matchStatus === 'true'){
-             {/*return browserHistory.push('/app')*/}
-             return (
-               <App fbObject={this.state.fbObject} />
-             )
-           }
-          //  else if (window.localStorage.getItem("accessToken") && )
-
-           return (
-               <div>
-                   <h1>this is splash</h1>
-                     <FacebookLogin
-                         appId="1822141354680309"
-                         autoLoad={true}
-                         fields="name,email,picture"
-                         callback={this.responseFacebook}
-                         cssClass="my-facebook-button-class"
-                         icon="fa-facebook"
-                     />
-               </div>
-           )
-       }
-   }
-
-   export default Splash
-
-
-
-{/*const data = {};
-data[response.id] = {
-  name: response.name,
-  email: response.email,
-  url: response.picture.data.url,
-  token: response.accessToken,
-  id: response.id
+    render() {
+        if (this.state.fbStatus === 'true' && this.state.matchStatus === 'false') {
+            console.log("go to form");
+            // const res = this.state.fbObject;
+            return browserHistory.push('/form')
+        }
+        else if (this.state.fbStatus === 'true' && this.state.matchStatus === 'true') {
+            return (
+                <App fbObject={this.state.fbObject}/>
+            )
+        }
+        return (
+            <div>
+                <h1>this is splash</h1>
+                <FacebookLogin
+                    appId="1822141354680309"
+                    autoLoad={true}
+                    fields="name,email,picture"
+                    callback={this.responseFacebook}
+                    cssClass="my-facebook-button-class"
+                    icon="fa-facebook"
+                />
+            </div>
+        )
+    }
 }
-helpers.addToDB(data).then((res) => {
-    console.log(res);
-})*/}
+
+export default Splash;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// {/*const data = {};
+//  data[response.id] = {
+//  name: response.name,
+//  email: response.email,
+//  url: response.picture.data.url,
+//  token: response.accessToken,
+//  id: response.id
+//  }
+//  helpers.addToDB(data).then((res) => {
+//  console.log(res);
+//  })*/
+// }
 
 
 // import React, {Component} from 'react';

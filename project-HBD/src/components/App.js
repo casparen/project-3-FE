@@ -1,8 +1,6 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router'
-import '../styles/App.css'
-import Test from './test.js'
-import {Router, Route, browserHistory} from 'react-router'
+import React, {Component} from 'react';
+import {Link} from 'react-router';
+import '../styles/App.css';
 
 class App extends Component {
     constructor(props) {

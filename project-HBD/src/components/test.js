@@ -1,11 +1,6 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router'
-
 
 class Test extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
             console.log("I am Test", ...this.props);
         return (
