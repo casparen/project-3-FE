@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import helpers from '../utils/helpers';
 import DashboardList from './DashboardList';
 import _ from 'lodash';
-import {Link} from 'react-router'
 
 class Dashboard extends Component {
     constructor(props) {
@@ -31,8 +30,4 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard
-
-// <Link to='/message'>
-//     <button>Link to message</button>
-// </Link>
+export default Dashboard;
