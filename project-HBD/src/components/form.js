@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import '../styles/signup.css'
 import Helper from '../utils/helpers.js'
 import {Link} from 'react-router'
+import TextField from 'material-ui/TextField';
 
 class SignUpForm extends Component {
     constructor(props) {
