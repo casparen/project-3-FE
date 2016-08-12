@@ -1,8 +1,9 @@
-import React, {Component} from 'react'
-import '../styles/signup.css'
-import Helper from '../utils/helpers.js'
-import {Link} from 'react-router'
-import TextField from 'material-ui/TextField';
+import React, {Component} from 'react';
+import '../styles/form.css';
+import Helper from '../utils/helpers.js';
+import {Link} from 'react-router';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 class SignUpForm extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class SignUpForm extends Component {
             firstName: "",
             lastName: "",
             email: "",
+            phone:"",
             day: "",
             month: "",
             year: "",
@@ -48,6 +50,7 @@ class SignUpForm extends Component {
         const data = {
               name: this.state.name,
               email: this.state.email,
+              phone: this.state.phone,
               dob: this.state.day + this.state.month,
               program: this.state.programm,
               cohort: this.state.cohort,
@@ -80,6 +83,9 @@ class SignUpForm extends Component {
                     <input type="text" placeholder={this.state.fbUser.email}
                            onChange={(event) => this.setState({email: event.target.value})}
                            value={this.state.email}></input>
+                    <input type="text" placeholder="phone number"
+                            onChange={(event) => this.setState({phone: event.target.value})}
+                            value={this.state.phone}></input>
                     <div>
                         <input type="text" placeholder="day"
                                onChange={(event) => this.setState({day: event.target.value})}
@@ -95,7 +101,7 @@ class SignUpForm extends Component {
                     <select onChange={(event) => this.setState({programm: event.target.value})}>
                         <option>Please Choose</option>
                         <option value="WDI">WDI</option>
-                        <option value="test">test</option>
+                        <option value="UXI">UXI</option>
                     </select>
 
                     <select onChange={(event) => this.setState({cohort: event.target.value})}>
