@@ -96,6 +96,12 @@ class SignUpForm extends Component {
                         <input type="text" placeholder="year"
                                onChange={(event) => this.setState({year: event.target.value})}
                                value={this.state.year}></input>
+                               <input type="text" placeholder="program"
+                                      onChange={(event) => this.setState({year: event.target.value})}
+                                      value={this.state.program}></input>
+                               <input type="text" placeholder="cohort"
+                                      onChange={(event) => this.setState({year: event.target.value})}
+                                      value={this.state.cohort}></input>
                     </div>
 
                     <select onChange={(event) => this.setState({programm: event.target.value})}>
