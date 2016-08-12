@@ -6,10 +6,10 @@ class Navbar extends Component {
         return (
             <div>
             <Link to='/profile'>
-                <button>Your profile</button>
+                <Button bsStyle="default" bsSize="small">Your profile</Button>
             </Link>
             <Link to='/allProfiles'>
-                <button>Dashboard</button>
+                <Button bsStyle="default" bsSize="small">Dashboard</Button>
             </Link>
             </div>
         );
