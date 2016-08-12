@@ -14,14 +14,15 @@ import Test from './components/test.js'
 /* browserHistory keeps track of where you are on the App */
 ReactDOM.render(
     <Router history={browserHistory}>
-          <Route path='/' component={Splash} />
-          <Route path='/form' component={Form} />
-        <Route path='/app' component={App}>
-            <Route path='/dashboard' component={Dashboard}/>
-            <Route path='/message' component={Message}/>
-            <Route path='/profile' component={Profile} />
-            <Route path='/test' component={Test}></Route>
-          </Route>
+      <Route path='/' component={Splash}>
+        <Route path='/form' component={Form} />
+            <Route path='/app' component={App}>
+              <Route path='/dashboard' component={Dashboard}/>
+              <Route path='/message' component={Message}/>
+              <Route path='/profile' component={Profile} />
+              <Route path='/test' component={Test}></Route>
+            </Route>
+      </Route>
     </Router>
     , document.getElementById('root')
 );

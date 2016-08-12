@@ -1,11 +1,14 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router'
 import '../styles/App.css'
+import Test from './test.js'
+import {Router, Route, browserHistory} from 'react-router'
 
 class App extends Component {
     constructor(props) {
         super(props);
         console.log("I am App", this.props);
+          return browserHistory.push('/splash')
     }
     render() {
         return (
@@ -13,7 +16,7 @@ class App extends Component {
               <navigation className="navBar">
                 <Link to='/dashboard'><button className="button">Dashboard</button></Link>
                 <Link to='/profile'><button>Your profile</button></Link>
-                <Link to='/test'><button>Linkt test</button></Link>
+                <Link to='/test'><button>link to test</button></Link>
               </navigation>
               <h4>I am App</h4>
                 {this.props.children}
