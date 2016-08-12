@@ -12,11 +12,11 @@ import Message from './components/message.js'
 /* browserHistory keeps track of where you are on the App */
 ReactDOM.render(
     <Router history={browserHistory}>
-        <Route path='/' component={Splash}/>
+        <Route path='/' component={Splash} />
           <Route path='/app' component={App}>
             <Route path='/dashboard' component={Dashboard}/>
             <Route path='/message' component={Message}/>
-            <Route path='/profile' component={Profile}/>
+            <Route path='/profile' component={Profile} />
           </Route>
     </Router>
     , document.getElementById('root')

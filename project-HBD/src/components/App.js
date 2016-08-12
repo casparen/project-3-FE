@@ -6,7 +6,6 @@ class App extends Component {
         super(props);
     }
     render() {
-      // console.log("APP", this.props);
         return (
             <div>
               <navigation>
@@ -14,7 +13,7 @@ class App extends Component {
                 <Link to='/profile'><button>Your profile</button></Link>
               </navigation>
               <h4>I am App</h4>
-          {this.props.children}
+                {this.props.children}
             </div>
         )
     }
