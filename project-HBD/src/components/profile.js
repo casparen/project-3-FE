@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import FacebookLogin from 'react-facebook-login';
+import {Link, Router, Route, browserHistory} from 'react-router'
 import helper2 from "../utils/helper2";
 import _ from "lodash";
 import '../styles/profile.css'
@@ -28,28 +28,19 @@ class Profile extends Component {
     this.setState({response: event.target.value})
    }
 
-  handleClickUpdate (event){
+  edit (event){
+    console.log("click");
     event.preventDefault();
     console.log(this.state.response);
+    return browserHistory.push('/EditProfile')
 
-    const data = {
-      Name: this.state.name,
-      Email: this.state.email,
-      DOB: this.state.dob,
-      Number: this.state.mNumber,
-      Program: this.state.program,
-      Cohort:  this.state.cohorot
-    }
-
-    // helper2.updateProfile(data).then(res => {
-    //   console.log("updated", res);
-    // });
   }
 
 
 
     render() {
     const res = this.state.response
+    console.log(res);
     // console.log(this.state.response);
       // const fbProfile = this.state.response
       // console.log("user:",user);
@@ -60,18 +51,12 @@ class Profile extends Component {
           <div className="wrapper">
             <div className="container">
               <img src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-              <form className="text">
+              <h2>{res.name}</h2>
+              <h2>{res.email}</h2>
+              <h2>{res.dob}</h2>
 
-                <input type="text" placeholder="name" onChange={(event) => this.handleClickUpdate(event)}></input>
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}></input>
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}></input>
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}></input>
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}></input>
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}></input>
-              </form>
+                <button onClick={(event) => this.edit(event)}>Edit</button>
             </div>
-            <button onClick={(event) => this.updateProfile(event)}>Update</button>
-
           </div>
 
         );
