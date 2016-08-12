@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+}
+
+.profilePic {
+  border-radius: 25%;
+}

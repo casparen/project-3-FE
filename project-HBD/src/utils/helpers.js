@@ -7,7 +7,7 @@ export default {
     addToDB: function (data) {
         console.log("helper", data);
         const fetchSettings = {
-            method: 'PATCH',
+            method: 'PUT',
             body: JSON.stringify(data),
         };
         return fetch('https://happybday-d595a.firebaseio.com/ga/wdi/robots/users.json', fetchSettings)
