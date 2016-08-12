@@ -17,7 +17,7 @@ class Splash extends Component {
     };
 
     responseFacebook = (response) => {
-           // console.log(response);
+           console.log(response);
            if (response.status) {
                this.setState({status: response.status})
            } else if (response.accessToken) {
