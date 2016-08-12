@@ -1,27 +1,46 @@
 import React, {Component} from 'react';
-import FacebookLogin from 'react-facebook-login';
+import {Link, Router, Route, browserHistory} from 'react-router'
 import helper2 from "../utils/helper2";
 import _ from "lodash";
 import '../styles/profile.css'
 
 class Profile extends Component {
   constructor(props) {
-      super(props);
+    super(props);
 
-      this.state = {
-        response: ''
-      }
+    this.state = {
+      response: [],
+      Name: '',
+      Email: '',
+      DOB: '',
+      Number: '',
+      Program: '',
+      Cohort: ''
+    }
+    helper2.getUser().then((res) => {
+      console.log(res);
+      this.setState({response: res})
+    })
+  }
 
-helper2.getUser().then((res) => {
-  // console.log(res);
-  this.setState({response: res})
-})
+  onChange(event){
+    event.preventDefault()
+    this.setState({response: event.target.value})
+   }
 
-
+  edit (event){
+    console.log("click");
+    event.preventDefault();
+    console.log(this.state.response);
+    return browserHistory.push('/EditProfile')
 
   }
+
+
+
     render() {
     const res = this.state.response
+    console.log(res);
     // console.log(this.state.response);
       // const fbProfile = this.state.response
       // console.log("user:",user);
@@ -32,19 +51,18 @@ helper2.getUser().then((res) => {
           <div className="wrapper">
             <div className="container">
               <img src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-              <div className="text">
-                <h4>{res.name}</h4>
-                <h4>Email: {res.email}</h4>
-                <h4>DOB: {res.dob}</h4>
-                <h4>Number: {res.number}</h4>
-              </div>
-            </div>
+              <h2>{res.name}</h2>
+              <h2>{res.email}</h2>
+              <h2>{res.dob}</h2>
 
+                <button onClick={(event) => this.edit(event)}>Edit</button>
+            </div>
           </div>
 
         );
-    }
-}
+      }
+  }
+
 
 export default Profile;
 

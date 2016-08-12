@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import '../styles/form.css';
 import Helper from '../utils/helpers.js';
-import {Link, Router, Route, browserHistory} from 'react-router';
+import {Link, Router, Route, browserHistory} from 'react-router'
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
@@ -26,6 +27,7 @@ class SignUpForm extends Component {
           this.setState({fbUser: res})
         })
     }
+
 
 
     handleSubmit(event) {
@@ -57,14 +59,7 @@ class SignUpForm extends Component {
             Helper.addToDB(data).then((res) => {
               console.log(res);
             })
-
-            return browserHistory.push('/app')
-
-
-
-
 return browserHistory.push('/app')
-
     }
 
     render() {

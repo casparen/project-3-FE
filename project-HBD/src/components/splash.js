@@ -4,6 +4,7 @@ import _ from "lodash";
 import App from "./App";
 import helpers from "../utils/helpers";
 import Form from './form.js'
+import {Router, Route, browserHistory} from 'react-router'
 
 class Splash extends Component {
     constructor(props) {
@@ -66,7 +67,7 @@ class Splash extends Component {
            if (this.state.fbStatus === 'true' && this.state.matchStatus === 'false') {
                console.log("go to form");
                const res = this.state.fbObject
-               const data = {}
+               {/*const data = {}
                data['fbUser'] = {
                   accessToken: res.accessToken,
                   name: res.name,
@@ -76,19 +77,16 @@ class Splash extends Component {
                }
                helpers.addFbDB(data).then((res) => {
 
-               })
+               })*/}
 
-             return (
-                   <div>
-                     <Form />
-                   </div>
-                 )
+             return browserHistory.push('/form')
+
+             {/*return browserHistory.push('/form')*/}
            }
            else if (this.state.fbStatus === 'true' && this.state.matchStatus === 'true'){
+             {/*return browserHistory.push('/app')*/}
              return (
-               <div>
-                 <App />
-               </div>
+               <App fbObject={this.state.fbObject} />
              )
            }
           //  else if (window.localStorage.getItem("accessToken") && )
@@ -104,7 +102,6 @@ class Splash extends Component {
                          cssClass="my-facebook-button-class"
                          icon="fa-facebook"
                      />
-
                </div>
            )
        }
