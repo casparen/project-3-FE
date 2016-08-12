@@ -4,6 +4,7 @@ import _ from "lodash";
 import App from "./App";
 import helpers from "../utils/helpers";
 import Form from './form.js'
+import {Router, Route, browserHistory} from 'react-router'
 
 class Splash extends Component {
     constructor(props) {
@@ -78,17 +79,14 @@ class Splash extends Component {
 
                })*/}
 
-             return (
-                   <div>
-                     <Form />
-                   </div>
-                 )
+             return browserHistory.push('/form')
+
+             {/*return browserHistory.push('/form')*/}
            }
            else if (this.state.fbStatus === 'true' && this.state.matchStatus === 'true'){
+             {/*return browserHistory.push('/app')*/}
              return (
-               <div>
-                 <App />
-               </div>
+               <App fbObject={fbObject} />
              )
            }
           //  else if (window.localStorage.getItem("accessToken") && )

@@ -5,9 +5,9 @@ import {Link} from 'react-router'
 class Test extends Component {
     constructor(props) {
         super(props);
-        console.log("I am Test", this.props);
     }
     render() {
+            console.log("I am Test", this.props.params.fbObject);
         return (
             <div>
             <h1>I am a test</h1>
