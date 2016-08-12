@@ -1,10 +1,14 @@
 import React, {Component} from 'react'
 import '../styles/signup.css'
+import Helper from '../utils/helpers.js'
+import {Link} from 'react-router'
 
 class SignUpForm extends Component {
     constructor(props) {
         super();
         this.state = {
+            fbUser: {},
+            name: '',
             firstName: "",
             lastName: "",
             email: "",
@@ -14,6 +18,10 @@ class SignUpForm extends Component {
             programm: "",
             cohort: ""
         }
+        Helper.getFbUser().then((res) => {
+          // console.log("form",res);
+          this.setState({fbUser: res})
+        })
     }
 
     birthday() {
@@ -22,29 +30,53 @@ class SignUpForm extends Component {
 
 
     handleSubmit(event) {
+
+
         event.preventDefault()
         // console.log(this.state.Fname);
-        console.log('first name', this.state.firstName);
-        console.log('last name', this.state.lastName);
-        console.log('email', this.state.email);
-        console.log('birthday', this.state.day, this.state.month, this.state.year);
+        // console.log(this.state.firstName + ' ' + this.state.lastName);
+        // console.log('first name', this.state.firstName);
+        // console.log('last name', this.state.lastName);
+        // console.log('email', this.state.email);
+        // console.log('birthday', this.state.day, this.state.month, this.state.year);
+        //
+        // console.log("programm", this.state.programm);
+        // console.log("corhort", this.state.cohort);
+        console.log(this.state.name);
+        const data = {}
+        data[this.state.fbUser.id] = {
+              name: this.state.name,
+              email: this.state.email,
+              dob: this.state.day + this.state.month,
+              programm: this.state.programm,
+              corhort: this.state.cohort,
+              id: this.state.fbUser.id,
+              accessToken: this.state.fbUser.accessToken
+            }
 
-        console.log("programm", this.state.programm);
-        console.log("corhort", this.state.cohort);
+            Helper.addToDB(data).then((res) => {
+              console.log(res);
+            })
+
+
     }
 
     render() {
+      // console.log("form",this.state.fbUser);
         return (
             <div>
                 <h1>Sign up</h1>
                 <form className="FormContainer">
-                    <input type="text" placeholder="first name"
+                  <input type="text" placeholder={this.state.fbUser.name}
+                         onChange={(event) => this.setState({name: event.target.value})} value={this.state.name}></input>
+
+                       {/*<input type="text" placeholder="first name"
                            onChange={(event) => this.setState({firstName: event.target.value})}
                            value={this.state.firstName}></input>
                     <input type="text" placeholder="last name"
                            onChange={(event) => this.setState({lastName: event.target.value})}
-                           value={this.state.lastName}></input>
-                    <input type="text" placeholder="email"
+                           value={this.state.lastName}></input>*/}
+                    <input type="text" placeholder={this.state.fbUser.email}
                            onChange={(event) => this.setState({email: event.target.value})}
                            value={this.state.email}></input>
                     <div>
@@ -70,8 +102,7 @@ class SignUpForm extends Component {
                         <option value="robots">robots</option>
                         <option value="purple rain">purple rain</option>
                     </select>
-
-                    <button onClick={(event) => this.handleSubmit(event)}>SUBMIT</button>
+                      <button onClick={(event) => this.handleSubmit(event)}><Link to='/app'>SUBMIT</Link></button>
                 </form>
             </div>
 

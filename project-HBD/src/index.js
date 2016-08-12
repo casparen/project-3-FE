@@ -14,8 +14,9 @@ import Form from './components/form.js'
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path='/' component={Splash} />
-        <Route path='/form' component={Form} />
+      <Route path='/form' component={Form} />
           <Route path='/app' component={App}>
+
             <Route path='/dashboard' component={Dashboard}/>
             <Route path='/message' component={Message}/>
             <Route path='/profile' component={Profile} />

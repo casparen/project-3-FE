@@ -10,13 +10,27 @@ export default {
             method: 'PATCH',
             body: JSON.stringify(data),
         };
+        return fetch('https://happybday-d595a.firebaseio.com/ga/wdi/robots/users.json', fetchSettings)
+            .then(response => response.json())
+    },
+    addFbDB: function (data) {
+        console.log("helper", data);
+        const fetchSettings = {
+            method: 'PATCH',
+            body: JSON.stringify(data),
+        };
         return fetch('https://happybday-d595a.firebaseio.com/ga/wdi/robots.json', fetchSettings)
             .then(response => response.json())
+    },
+    getFbUser: function (){
+      const fetchSettings = {method: 'GET'};
+      return fetch('https://happybday-d595a.firebaseio.com/ga/wdi/robots/fbUser.json', fetchSettings)
+      .then(response => response.json())
     },
 
     checkForMatch: function () {
         const fetchSettings = {method: 'GET'};
-        return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/.json`, fetchSettings)
+        return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/users.json`, fetchSettings)
             .then(response => response.json())
     },
     // newPost: function(message) {
