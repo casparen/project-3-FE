@@ -40,12 +40,12 @@ handleClickUpdate (event){
     Program: this.state.program,
     Cohort:  this.state.cohorot
   }
-}
 
-    helper2.updateProfile().then((res) => {
-      console.log("updated", res);
-    });
-  }
+
+  helper2.updateProfile().then(res => {
+    console.log("updated", res);
+  });
+}
 
 
 
