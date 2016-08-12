@@ -9,7 +9,7 @@ class Profile extends Component {
     super(props);
 
     this.state = {
-      response: '',
+      response: [],
       Name: '',
       Email: '',
       DOB: '',
@@ -23,29 +23,28 @@ class Profile extends Component {
     })
   }
 
-onChange(event){
-  event.preventDefault()
-  this.setState({response: event.target.value})
+  onChange(event){
+    event.preventDefault()
+    this.setState({response: event.target.value})
    }
 
-handleClickUpdate (event){
-  event.preventDefault();
-  console.log(update);
+  handleClickUpdate (event){
+    event.preventDefault();
+    console.log(this.state.response);
 
-  const data = {
-    Name: this.state.name,
-    Email: this.state.email,
-    DOB: this.state.dob,
-    Number: this.state.mNumber,
-    Program: this.state.program,
-    Cohort:  this.state.cohorot
+    const data = {
+      Name: this.state.name,
+      Email: this.state.email,
+      DOB: this.state.dob,
+      Number: this.state.mNumber,
+      Program: this.state.program,
+      Cohort:  this.state.cohorot
+    }
+
+    // helper2.updateProfile(data).then(res => {
+    //   console.log("updated", res);
+    // });
   }
-
-
-  helper2.updateProfile().then(res => {
-    console.log("updated", res);
-  });
-}
 
 
 
@@ -62,12 +61,13 @@ handleClickUpdate (event){
             <div className="container">
               <img src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
               <form className="text">
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>Name: {res.name}</input>
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>Email: {res.email}</input>
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>DOB: {res.dob}</input>
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>Number: {res.mNumber}</input>
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>Program: {res.program}</input>
-                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>Cohort: {res.cohort}</input>
+
+                <input type="text" placeholder="name" onChange={(event) => this.handleClickUpdate(event)}></input>
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}></input>
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}></input>
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}></input>
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}></input>
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}></input>
               </form>
             </div>
             <button onClick={(event) => this.updateProfile(event)}>Update</button>
