@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import '../styles/form.css';
 import Helper from '../utils/helpers.js';
 import {Link, Router, Route, browserHistory} from 'react-router'
+<<<<<<< HEAD
+=======
+
+>>>>>>> a896cb98ab5a44b7560163c26eaccd570b25bcb6
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
@@ -27,6 +31,11 @@ class SignUpForm extends Component {
         })
     }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a896cb98ab5a44b7560163c26eaccd570b25bcb6
     handleSubmit(event) {
 
 
@@ -56,10 +65,14 @@ class SignUpForm extends Component {
             Helper.addToDB(data).then((res) => {
               console.log(res);
             })
+<<<<<<< HEAD
             return browserHistory.push('/app')
 
 
 
+=======
+return browserHistory.push('/app')
+>>>>>>> a896cb98ab5a44b7560163c26eaccd570b25bcb6
     }
 
     render() {
