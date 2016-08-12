@@ -3,7 +3,7 @@ import FacebookLogin from 'react-facebook-login';
 import _ from "lodash";
 import App from "./App";
 import helpers from "../utils/helpers";
-
+import Form from './form.js'
 
 class Splash extends Component {
     constructor(props) {
@@ -12,7 +12,8 @@ class Splash extends Component {
             status: '',
             accessToken: '',
             email: '',
-            user: {}
+            user: {},
+            matchStatus: ""
         };
     };
 
@@ -31,18 +32,22 @@ class Splash extends Component {
                    .then(res => {
                        let user = _.values(res).filter(each => each.email !== this.state.email);
                        // console.log("userinfo: ", user[0]);
-                       this.setState({user: user[0]})
-                       const data = {};
-                       data[response.id] = {
-                         name: response.name,
-                         email: response.email,
-                         url: response.picture.data.url,
-                         token: response.accessToken,
-                         id: response.id
-                       }
-                       helpers.addToDB(data).then((res) => {
-                           console.log(res);
-                       })
+                       console.log("no matching data");
+
+                       this.setState({user: user[0],
+                                    matchStatus: "false"
+                                })
+                      //  const data = {};
+                      //  data[response.id] = {
+                      //    name: response.name,
+                      //    email: response.email,
+                      //    url: response.picture.data.url,
+                      //    token: response.accessToken,
+                      //    id: response.id
+                      //  }
+                      //  helpers.addToDB(data).then((res) => {
+                      //      console.log(res);
+                      //  })
                    })
            }
        };
@@ -52,16 +57,16 @@ class Splash extends Component {
 
            if (this.state.status === "not_authorized") {
                console.log("user not authorized");
-           } else if (window.localStorage.getItem("accessToken")) {
+           } else if (window.localStorage.getItem("accessToken") && this.state.matchStatus === 'false') {
                console.log("got access token!");
 
-                 return (
+             return (
                    <div>
-                   <App profile={this.state.facebookUser} />
+                   <Form />
                    </div>
                  )
-
            }
+
            return (
                <div>
                    <h1>this is splash</h1>
