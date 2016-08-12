@@ -20,7 +20,7 @@ ReactDOM.render(
               <Route path='/dashboard' component={Dashboard}/>
               <Route path='/message' component={Message}/>
               <Route path='/profile' component={Profile} />
-              <Route path='/test' component={Test}></Route>
+              <Route path='/test' component={Test} />
             </Route>
     </Router>
     , document.getElementById('root')
