@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router'
+import '../styles/App.css'
 
 class App extends Component {
     constructor(props) {
@@ -8,8 +9,8 @@ class App extends Component {
     render() {
         return (
             <div>
-              <navigation>
-                <Link to='/dashboard'><button>Dashboard</button></Link>
+              <navigation className="navBar">
+                <Link to='/dashboard'><button className="button">Dashboard</button></Link>
                 <Link to='/profile'><button>Your profile</button></Link>
               </navigation>
               <h4>I am App</h4>

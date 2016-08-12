@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import FacebookLogin from 'react-facebook-login';
 import helpers from "../utils/helpers";
 import _ from "lodash";
+import '../styles/profile.css'
 
 class Profile extends Component {
   constructor(props) {
@@ -26,19 +27,24 @@ class Profile extends Component {
       // console.log("test",this.state.response);
       // console.log("profile", window.localStorage.getItem('accessToken'));
       const userArr = [
-          {name: "Harry", number: "+19175172934", dob:"1203"}
+          {name: "Harry Hur", number: "+19175172934", dob:"1203", email: "ilbenoala@yahoo.com"}
           // {name: "Al", number: "+12017804856", dob: "0812"},
           // {name: "Mimi", number: "+9175763311", dob: "0811"},
           // {name: "Caspar", number: "+6318006170", dob: "1103"}
       ];
         return (
-                <div className="container">
+                <div className="wrapper">
                   {
                     userArr.map((obj, i) => {
                       return (
-                        <div>
+                        <div className="container">
                           <img src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-                          <h1>{obj.name}</h1>
+                          <div className="text">
+                            <h4>{obj.name}</h4>
+                            <h4>Email: {obj.email}</h4>
+                            <h4>DOB: {obj.dob}</h4>
+                            <h4>Number: {obj.number}</h4>
+                          </div>
                         </div>
                       )
                     })
