@@ -1,7 +1,9 @@
-import React, {Component} from 'react'
-import '../styles/signup.css'
-import Helper from '../utils/helpers.js'
-import {Link} from 'react-router'
+import React, {Component} from 'react';
+import '../styles/form.css';
+import Helper from '../utils/helpers.js';
+import {Link} from 'react-router';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 class SignUpForm extends Component {
     constructor(props) {
@@ -12,10 +14,11 @@ class SignUpForm extends Component {
             firstName: "",
             lastName: "",
             email: "",
+            phone:"",
             day: "",
             month: "",
             year: "",
-            programm: "",
+            program: "",
             cohort: ""
         }
         Helper.getFbUser().then((res) => {
@@ -43,16 +46,17 @@ class SignUpForm extends Component {
         // console.log("programm", this.state.programm);
         // console.log("corhort", this.state.cohort);
         console.log(this.state.name);
-        const data = {}
-        data[this.state.fbUser.id] = {
+        // const data = {}
+        const data = {
               name: this.state.name,
               email: this.state.email,
+              phone: this.state.phone,
               dob: this.state.day + this.state.month,
-              programm: this.state.programm,
-              corhort: this.state.cohort,
+              program: this.state.programm,
+              cohort: this.state.cohort,
               id: this.state.fbUser.id,
               accessToken: this.state.fbUser.accessToken
-            }
+            };
 
             Helper.addToDB(data).then((res) => {
               console.log(res);
@@ -79,6 +83,9 @@ class SignUpForm extends Component {
                     <input type="text" placeholder={this.state.fbUser.email}
                            onChange={(event) => this.setState({email: event.target.value})}
                            value={this.state.email}></input>
+                    <input type="text" placeholder="phone number"
+                            onChange={(event) => this.setState({phone: event.target.value})}
+                            value={this.state.phone}></input>
                     <div>
                         <input type="text" placeholder="day"
                                onChange={(event) => this.setState({day: event.target.value})}
@@ -94,7 +101,7 @@ class SignUpForm extends Component {
                     <select onChange={(event) => this.setState({programm: event.target.value})}>
                         <option>Please Choose</option>
                         <option value="WDI">WDI</option>
-                        <option value="test">test</option>
+                        <option value="UXI">UXI</option>
                     </select>
 
                     <select onChange={(event) => this.setState({cohort: event.target.value})}>

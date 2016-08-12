@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import FacebookLogin from 'react-facebook-login';
-import helpers from "../utils/helpers";
+import helper2 from "../utils/helper2";
 import _ from "lodash";
+import '../styles/profile.css'
 
 class Profile extends Component {
   constructor(props) {
@@ -11,46 +12,57 @@ class Profile extends Component {
         response: ''
       }
 
-helpers.checkForMatch().then((res) => {
+helper2.getUser().then((res) => {
   // console.log(res);
   this.setState({response: res})
 })
 
+
+
   }
     render() {
-      const fbProfile = this.state.response
-      let user = _.values(fbProfile)
-
-console.log("user:",user);
-
-
+    const res = this.state.response
+    // console.log(this.state.response);
+      // const fbProfile = this.state.response
+      // console.log("user:",user);
       // console.log("test",this.state.response);
       // console.log("profile", window.localStorage.getItem('accessToken'));
 
-
         return (
-            <div>
-                <h1>Profile goes here</h1>
-                <div>
-                  {
-                    user.map((obj, index) => {
-                      console.log(obj.url);
-                      return (
-                        <div>
-                          <h4>{obj.name}</h4>
-                          <h4>{obj.email}</h4>
-                          <img src={obj.url}></img>
-                        </div>
-                      )
-
-
-                    })
-                  }
-                </div>
-
+          <div className="wrapper">
+            <div className="container">
+              <img src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
+              <div className="text">
+                <h4>{res.name}</h4>
+                <h4>Email: {res.email}</h4>
+                <h4>DOB: {res.dob}</h4>
+                <h4>Number: {res.number}</h4>
+              </div>
             </div>
+
+          </div>
+
         );
     }
 }
 
 export default Profile;
+
+
+
+
+{/*                                   {
+                    userArr.map((obj, i) => {
+                      return (
+                        <div className="container">
+                          <img src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
+                          <div className="text">
+                            <h4>{obj.name}</h4>
+                            <h4>Email: {obj.email}</h4>
+                            <h4>DOB: {obj.dob}</h4>
+                            <h4>Number: {obj.number}</h4>
+                          </div>
+                        </div>
+                      )
+                    })
+                  }*/}

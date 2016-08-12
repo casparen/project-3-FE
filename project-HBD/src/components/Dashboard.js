@@ -16,6 +16,7 @@ class Dashboard extends Component {
                 this.setState({response: user})
             })
     }
+
     render() {
         return (
             <div>
