@@ -66,7 +66,7 @@ class Splash extends Component {
            if (this.state.fbStatus === 'true' && this.state.matchStatus === 'false') {
                console.log("go to form");
                const res = this.state.fbObject
-               const data = {}
+               {/*const data = {}
                data['fbUser'] = {
                   accessToken: res.accessToken,
                   name: res.name,
@@ -76,7 +76,7 @@ class Splash extends Component {
                }
                helpers.addFbDB(data).then((res) => {
 
-               })
+               })*/}
 
              return (
                    <div>
