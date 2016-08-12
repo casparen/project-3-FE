@@ -23,29 +23,27 @@ class Profile extends Component {
     })
   }
 
-onChange(event){
-  event.preventDefault()
-  this.setState({response: event.target.value})
+  onChange(event){
+    event.preventDefault()
+    this.setState({response: event.target.value})
    }
 
-handleClickUpdate (event){
-  event.preventDefault();
-  console.log(update);
+  handleClickUpdate (event){
+    event.preventDefault();
 
-  const data = {
-    Name: this.state.name,
-    Email: this.state.email,
-    DOB: this.state.dob,
-    Number: this.state.mNumber,
-    Program: this.state.program,
-    Cohort:  this.state.cohorot
+    const data = {
+      Name: this.state.name,
+      Email: this.state.email,
+      DOB: this.state.dob,
+      Number: this.state.mNumber,
+      Program: this.state.program,
+      Cohort:  this.state.cohorot
+    }
+
+    helper2.updateProfile(data).then(res => {
+      console.log("updated", res);
+    });
   }
-
-
-  helper2.updateProfile().then(res => {
-    console.log("updated", res);
-  });
-}
 
 
 
