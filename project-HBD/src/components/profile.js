@@ -6,20 +6,49 @@ import '../styles/profile.css'
 
 class Profile extends Component {
   constructor(props) {
-      super(props);
+    super(props);
 
-      this.state = {
-        response: ''
-      }
-
-helper2.getUser().then((res) => {
-  // console.log(res);
-  this.setState({response: res})
-})
-
-
-
+    this.state = {
+      response: '',
+      Name: '',
+      Email: '',
+      DOB: '',
+      Number: '',
+      Program: '',
+      Cohort: ''
+    }
+    helper2.getUser().then((res) => {
+      console.log(res);
+      this.setState({response: res})
+    })
   }
+
+onChange(event){
+  event.preventDefault()
+  this.setState({response: event.target.value})
+   }
+
+handleClickUpdate (event){
+  event.preventDefault();
+  console.log(update);
+
+  const data = {
+    Name: this.state.name,
+    Email: this.state.email,
+    DOB: this.state.dob,
+    Number: this.state.mNumber,
+    Program: this.state.program,
+    Cohort:  this.state.cohorot
+  }
+}
+
+    helper2.updateProfile().then((res) => {
+      console.log("updated", res);
+    });
+  }
+
+
+
     render() {
     const res = this.state.response
     // console.log(this.state.response);
@@ -32,19 +61,23 @@ helper2.getUser().then((res) => {
           <div className="wrapper">
             <div className="container">
               <img src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-              <div className="text">
-                <h4>{res.name}</h4>
-                <h4>Email: {res.email}</h4>
-                <h4>DOB: {res.dob}</h4>
-                <h4>Number: {res.number}</h4>
-              </div>
+              <form className="text">
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>Name: {res.name}</input>
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>Email: {res.email}</input>
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>DOB: {res.dob}</input>
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>Number: {res.mNumber}</input>
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>Program: {res.program}</input>
+                <input type="text" onChange={(event) => this.handleClickUpdate(event)}>Cohort: {res.cohort}</input>
+              </form>
             </div>
+            <button onClick={(event) => this.updateProfile(event)}>Update</button>
 
           </div>
 
         );
-    }
-}
+      }
+  }
+
 
 export default Profile;
 
