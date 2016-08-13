@@ -5,6 +5,10 @@ import App from "./App";
 import helpers from "../utils/helpers";
 import Form from './form.js'
 import {Router, Route, browserHistory} from 'react-router'
+import {Jumbotron} from 'react-bootstrap';
+import '../styles/splash.css';
+
+
 
 class Splash extends Component {
     constructor(props) {
@@ -93,7 +97,9 @@ class Splash extends Component {
 
            return (
                <div>
-                   <h1>this is splash</h1>
+                  <Jumbotron><h1 className="title">Birthday Message Dispatcher</h1>
+                  <img src="https://media.giphy.com/media/lfAmTSkxUv9io/giphy.gif"/>
+                  </Jumbotron>
                      <FacebookLogin
                          appId="1822141354680309"
                          autoLoad={true}
