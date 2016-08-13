@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import {browserHistory} from 'react-router'
-import helper2 from "../utils/helper2";
-import '../styles/profile.css'
+import {browserHistory} from 'react-router';
+import helper2 from "../../utils/helper2";
 
 class Profile extends Component {
   constructor(props) {

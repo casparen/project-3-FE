@@ -20,18 +20,24 @@ class Splash extends Component {
         };
     };
 
+    // response from facebook
     responseFacebook = (response) => {
-        //  console.log(response);
         if (response.accessToken.length > 0) {
             this.setState({
                 fbStatus: 'true',
                 fbEmail: response.email,
                 fbObject: response
             });
+            // store id, email and token in local storage
+            window.localStorage.setItem("uid", response.id);
+            window.localStorage.setItem("email", response.email);
+            window.localStorage.setItem("accessToken", response.accessToken);
+
             console.log("fbStataus:", this.state.fbStatus);
             console.log("sent data to db");
         }
 
+        // if
         if (this.state.fbStatus === 'true') {
             helpers.checkForMatch().then(res => {
                 let user = _.values(res).filter(each => each.email === this.state.fbEmail);
@@ -50,12 +56,9 @@ class Splash extends Component {
                         matchStatus: "true"
                     })
                 }
-
-
             })
         }
-    }
-
+    };
 
     render() {
         if (this.state.fbStatus === 'true' && this.state.matchStatus === 'false') {

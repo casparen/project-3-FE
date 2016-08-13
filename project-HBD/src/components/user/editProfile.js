@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import helper2 from "../utils/helper2";
-import '../styles/editProfile.css'
-import {browserHistory} from 'react-router'
+import {browserHistory} from 'react-router';
+import helper2 from "../../utils/helper2";
 
 
 
