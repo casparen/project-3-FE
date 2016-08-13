@@ -7,7 +7,7 @@ class Profile extends Component {
         super(props);
 
         this.state = {
-            response: [],
+            response: "",
             Name: '',
             Email: '',
             DOB: '',
@@ -17,16 +17,9 @@ class Profile extends Component {
         };
         let uid = (window.localStorage.getItem("uid"))
         console.log(uid);
-        helpers.getCurrentUser(uid).then(res => console.log("firebaseUSER:" ,res));
-        // helper2.getUser().then((res) => {
-        //   console.log(res);
-        //   this.setState({response: res})
-        // })
-    }
-
-    onChange(event) {
-        event.preventDefault()
-        this.setState({response: event.target.value})
+        helpers.getCurrentUser(uid).then((res) => {
+          this.setState({response: res})
+        })
     }
 
     edit(event) {
@@ -34,7 +27,6 @@ class Profile extends Component {
         event.preventDefault();
         console.log(this.state.response);
         return browserHistory.push('/EditProfile')
-
     }
 
 
@@ -50,8 +42,7 @@ class Profile extends Component {
         return (
             <div className="wrapper">
                 <div className="container">
-                    <img role="presentation" src="https://pickaface.net/assets/images/slides/slide2.png"
-                         className="profilePic"></img>
+                    <img role="presentation" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
                     <h2>{res.name}</h2>
                     <h2>{res.email}</h2>
                     <h2>{res.dob}</h2>
