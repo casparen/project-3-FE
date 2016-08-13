@@ -9,7 +9,7 @@ const firebaseUtils = {
             }
         }).then(res => {
           console.log("helper",res);
-          firebase.database().ref("ga/wdi/robots/"+res.uid).set({
+          firebase.database().ref("ga/wdi/robots/users/"+res.uid).set({
             uid: res.uid,
             name: data.name,
             email: data.email,

@@ -5,7 +5,7 @@ const Helpers = {
     },
     getCurrentUser: (uid) => {
         const fetchSettings = {method: 'GET'};
-        return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/${uid}.json`, fetchSettings)
+        return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/users/${uid}.json`, fetchSettings)
             .then(response => response.json())
     },
 };
