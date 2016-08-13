@@ -32,8 +32,8 @@ class SignUp extends Component {
                 <h3>sign up</h3>
                 <form action="">
                     name:        <input type="text" placeholder="name" onChange={e => this.setState({name: e.target.value})} /><br/>
-                    email:       <input type="text" placeholder="email" onChange={e => this.setState({email: e.target.value})} /><br/>
-                    password:    <input type="text" placeholder="password" onChange={e => this.setState({pass: e.target.value})} /><br/>
+                    email:       <input type="email" placeholder="email" onChange={e => this.setState({email: e.target.value})} /><br/>
+                    password:    <input type="password" placeholder="password" onChange={e => this.setState({pass: e.target.value})} /><br/>
                     number:      <input type="text" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} /><br/>
                                  <div>
                     month:         <input type="text" placeholder="month" onChange={e => this.setState({month: e.target.value})} />
