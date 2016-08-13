@@ -14,7 +14,7 @@ const firebaseUtils = {
             name: data.name,
             email: data.email,
             phone: data.phone,
-            data: data.dob
+            dob: data.dob
           })
           window.localStorage.setItem("uid", res.uid);
           console.info(window.localStorage.getItem("uid"));

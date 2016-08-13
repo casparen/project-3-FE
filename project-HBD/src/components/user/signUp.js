@@ -20,7 +20,7 @@ class SignUp extends Component {
         let data = {
           name: this.state.name,
           email: this.state.email,
-          phone: this.state.phone,
+          phone: `+1{$this.state.phone}`,
           dob: this.state.month + this.state.day
         }
         firebaseUtils.signUp(this.state.email, this.state.pass, data);
