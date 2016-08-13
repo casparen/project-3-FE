@@ -1,36 +1,13 @@
-export default {
-    getRandom: function (tag) {
-        const fetchSettings = {method: 'GET'}
-        return fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=happy%20birthday', fetchSettings)
+const Helpers = {
+    getGiphy: (tag) => {
+        return fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=happy%20birthday')
             .then((response) => response.json())
     },
-    addToDB: function (data) {
-        console.log("helper", data);
-        const fetchSettings = {
-            method: 'POST',
-            body: JSON.stringify(data),
-        };
-        return fetch('https://happybday-d595a.firebaseio.com/ga/wdi/robots/users.json', fetchSettings)
-            .then(response => response.json())
-    },
-    addFbDB: function (data) {
-        console.log("helper", data);
-        const fetchSettings = {
-            method: 'PATCH',
-            body: JSON.stringify(data),
-        };
-        return fetch('https://happybday-d595a.firebaseio.com/ga/wdi/robots.json', fetchSettings)
-            .then(response => response.json())
-    },
-    getFbUser: function (){
-      const fetchSettings = {method: 'GET'};
-      return fetch('https://happybday-d595a.firebaseio.com/ga/wdi/robots/fbUser.json', fetchSettings)
-      .then(response => response.json())
-    },
-
-    checkForMatch: function () {
+    getCurrentUser: (uid) => {
         const fetchSettings = {method: 'GET'};
-        return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/users.json`, fetchSettings)
+        return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/users/${uid}.json`, fetchSettings)
             .then(response => response.json())
     },
-}
+};
+
+module.exports = Helpers;

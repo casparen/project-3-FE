@@ -9,12 +9,12 @@ const firebaseUtils = {
             }
         }).then(res => {
           console.log("helper",res);
-          firebase.database().ref("ga/wdi/robots/"+res.uid).set({
+          firebase.database().ref("ga/wdi/robots/users/"+res.uid).set({
             uid: res.uid,
             name: data.name,
             email: data.email,
             phone: data.phone,
-            data: data.dob
+            dob: data.dob
           })
           window.localStorage.setItem("uid", res.uid);
           console.info(window.localStorage.getItem("uid"));
@@ -42,7 +42,7 @@ const firebaseUtils = {
         }, function(error) {
             // An error happened.
         }).then(res => {
-          window.localStorage.setItem("uid", null);
+          window.localStorage.setItem("uid", "");
           console.info("logged out!!", window.localStorage.getItem("uid"));
         });
     }
