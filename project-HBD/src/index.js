@@ -18,6 +18,7 @@ const config = {
     storageBucket: "happybday-d595a.appspot.com",
 };
 firebase.initializeApp(config);
+window.localStorage.setItem("uid", "");
 
 /* browserHistory keeps track of where you are on the App */
 ReactDOM.render(
