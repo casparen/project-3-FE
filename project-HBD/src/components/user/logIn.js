@@ -14,7 +14,7 @@ class LogIn extends Component {
         e.preventDefault();
         console.log("clicked: ", this.state.email, this.state.pass);
         firebaseUtils.logIn(this.state.email, this.state.pass);
-        return browserHistory.push("/dashboard");
+        return browserHistory.push("/");
     };
     render() {
         return (
