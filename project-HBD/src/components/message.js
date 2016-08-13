@@ -30,14 +30,14 @@ handleSubmit(event) {
 onClick(event){
   event.preventDefault()
   console.log('click');
-  Helpers.getRandom(this.state.response).then((res) => {
+  Helpers.getGiphy(this.state.response).then((res) => {
     this.setState({response: res.data})
     });
   }
 
 render(){
-  const result = this.state.response
-  const img = result.fixed_height_downsampled_url
+  const result = this.state.response;
+  const img = result.fixed_height_downsampled_url;
 
   return (
     <div>
