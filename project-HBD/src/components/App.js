@@ -9,7 +9,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoggedin: window.localStorage.getItem("uid")
+            isLoggedin: window.localStorage.getItem("uid") || ""
         };
     };
 

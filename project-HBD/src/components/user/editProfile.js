@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 // import { browserHistory } from 'react-router';
-// import helper2 from "../../utils/helper2";
-
-
 
 class EditProfile extends Component {
   constructor(props) {
@@ -21,15 +18,7 @@ class EditProfile extends Component {
            year: "",
            program: "",
            cohort: ""
-       }
-      //  helper2.getUser().then((res) => {
-      //    console.log(res);
-      //    this.setState({response: res})
-      //  })
-
-      
-
-
+       };
 }
 
 
@@ -65,9 +54,6 @@ class EditProfile extends Component {
     //   Number: this.state.mNumber
     // }
     // //
-    // helper2.updateProfile(data).then(res => {
-    //   console.log("updated", res);
-    // });
     // return browserHistory.push('/profile')
   }
 
