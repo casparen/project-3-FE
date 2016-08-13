@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {Link, Router, Route, browserHistory} from 'react-router'
-import helper2 from "../utils/helper2";
-import _ from "lodash";
-import '../styles/profile.css'
+import {browserHistory} from 'react-router';
+import helper2 from "../../utils/helper2";
 
 class Profile extends Component {
   constructor(props) {
@@ -50,7 +48,7 @@ class Profile extends Component {
         return (
           <div className="wrapper">
             <div className="container">
-              <img src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
+              <img role="presentation" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
               <h2>{res.name}</h2>
               <h2>{res.email}</h2>
               <h2>{res.dob}</h2>
@@ -65,22 +63,3 @@ class Profile extends Component {
 
 
 export default Profile;
-
-
-
-
-{/*                                   {
-                    userArr.map((obj, i) => {
-                      return (
-                        <div className="container">
-                          <img src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-                          <div className="text">
-                            <h4>{obj.name}</h4>
-                            <h4>Email: {obj.email}</h4>
-                            <h4>DOB: {obj.dob}</h4>
-                            <h4>Number: {obj.number}</h4>
-                          </div>
-                        </div>
-                      )
-                    })
-                  }*/}
