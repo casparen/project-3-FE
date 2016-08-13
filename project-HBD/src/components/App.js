@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import {Link, browserHistory} from 'react-router';
 import {Navbar, NavDropdown, MenuItem} from 'react-bootstrap';
 import firebaseUtils from '../utils/firebaseUtils';
-// import IsLoggedOut from './user/isLoggedOut';
-// import IsLoggedIn from './user/isLoggedIn';
 
 class App extends Component {
     constructor(props) {

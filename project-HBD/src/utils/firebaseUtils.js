@@ -29,7 +29,7 @@ const firebaseUtils = {
                 console.error(err.code, err.message)
             }
         }).then(res => {
-          console.log("logged in...",res);
+          console.log("logged in...", res);
           window.localStorage.setItem("uid", res.uid);
           console.info(window.localStorage.getItem("uid"));
           }
