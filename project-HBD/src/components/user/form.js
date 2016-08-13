@@ -62,32 +62,16 @@ class SignUpForm extends Component {
                 <h1>Sign up</h1>
                 <form className="FormContainer">
                     <div>
-                        <input type="text" placeholder={this.state.fbUser.name}
-                               onChange={e => this.setState({name: e.target.value})}
-                               value={this.state.name}></input>
-                        <input type="text" placeholder={this.state.fbUser.email}
-                               onChange={e => this.setState({email: e.target.value})}
-                               value={this.state.email}></input>
-                        <input type="text" placeholder="phone number"
-                               onChange={e => this.setState({phone: e.target.value})}
-                               value={this.state.phone}></input>
+                        <input type="text" placeholder={this.state.fbUser.name} onChange={e => this.setState({name: e.target.value})} value={this.state.name}></input>
+                        <input type="text" placeholder={this.state.fbUser.email} onChange={e => this.setState({email: e.target.value})} value={this.state.email}></input>
+                        <input type="text" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} value={this.state.phone}></input>
                     </div>
                     <div>
-                        <input type="text" placeholder="day"
-                               onChange={e => this.setState({day: e.target.value})}
-                               value={this.state.day}></input>
-                        <input type="text" placeholder="month"
-                               onChange={e => this.setState({month: e.target.value})}
-                               value={this.state.month}></input>
-                        <input type="text" placeholder="year"
-                               onChange={e => this.setState({year: e.target.value})}
-                               value={this.state.year}></input>
-                        <input type="text" placeholder="program"
-                               onChange={e => this.setState({year: e.target.value})}
-                               value={this.state.program}></input>
-                        <input type="text" placeholder="cohort"
-                               onChange={e => this.setState({year: e.target.value})}
-                               value={this.state.cohort}></input>
+                        <input type="text" placeholder="day" onChange={e => this.setState({day: e.target.value})} value={this.state.day}></input>
+                        <input type="text" placeholder="month" onChange={e => this.setState({month: e.target.value})} value={this.state.month}></input>
+                        <input type="text" placeholder="year" onChange={e => this.setState({year: e.target.value})} value={this.state.year}></input>
+                        <input type="text" placeholder="program" onChange={e => this.setState({year: e.target.value})} value={this.state.program}></input>
+                        <input type="text" placeholder="cohort" onChange={e => this.setState({year: e.target.value})} value={this.state.cohort}></input>
                     </div>
                     <select onChange={e => this.setState({program: e.target.value})}>
                         <option>Please Choose</option>
