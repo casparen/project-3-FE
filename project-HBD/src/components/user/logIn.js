@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {browserHistory} from 'react-router';
 import firebaseUtils from '../../utils/firebaseUtils';
 
 class LogIn extends Component {
@@ -13,6 +14,7 @@ class LogIn extends Component {
         e.preventDefault();
         console.log("clicked: ", this.state.email, this.state.pass);
         firebaseUtils.logIn(this.state.email, this.state.pass);
+        return browserHistory.push("/dashboard");
     };
     render() {
         return (

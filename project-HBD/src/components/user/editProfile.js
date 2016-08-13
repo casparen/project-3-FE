@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
-import helper2 from "../../utils/helper2";
+// import { browserHistory } from 'react-router';
+// import helper2 from "../../utils/helper2";
 
 
 
@@ -111,21 +111,21 @@ class EditProfile extends Component {
 }
 
 
-export default EditProfile
+export default EditProfile;
 
 
 
 
-{/*          <form className="FormContainer">
-            <input type="text"
-              onChange={(event) => this.setState({name: event.target.value})} value={this.state.response.name}></input>
-            <input type="text"
-              onChange={(event) => this.setState({email: event.target.value})}
-              value={this.state.response.email}></input>
-            <input type="text"
-              onChange={(event) => this.setState({phone: event.target.value})}
-              value={this.state.response.email}></input>
-              <input type="text"
-                onChange={(event) => this.setState({day: event.target.value})}
-                value={this.state.response.dob}></input>
-          </form>*/}
+// {/*          <form className="FormContainer">
+//             <input type="text"
+//               onChange={(event) => this.setState({name: event.target.value})} value={this.state.response.name}></input>
+//             <input type="text"
+//               onChange={(event) => this.setState({email: event.target.value})}
+//               value={this.state.response.email}></input>
+//             <input type="text"
+//               onChange={(event) => this.setState({phone: event.target.value})}
+//               value={this.state.response.email}></input>
+//               <input type="text"
+//                 onChange={(event) => this.setState({day: event.target.value})}
+//                 value={this.state.response.dob}></input>
+//           </form>*/}

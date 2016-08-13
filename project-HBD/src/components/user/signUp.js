@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import {browserHistory} from 'react-router';
 import firebaseUtils from '../../utils/firebaseUtils';
 
 class SignUp extends Component {
@@ -23,8 +24,7 @@ class SignUp extends Component {
           dob: this.state.month + this.state.day
         }
         firebaseUtils.signUp(this.state.email, this.state.pass, data);
-
-
+        return browserHistory.push("/");
     }
     render() {
         return (

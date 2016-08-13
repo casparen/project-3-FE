@@ -42,7 +42,7 @@ const firebaseUtils = {
         }, function(error) {
             // An error happened.
         }).then(res => {
-          window.localStorage.setItem("uid", null);
+          window.localStorage.setItem("uid", "");
           console.info("logged out!!", window.localStorage.getItem("uid"));
         });
     }
