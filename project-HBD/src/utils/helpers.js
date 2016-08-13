@@ -8,6 +8,11 @@ const Helpers = {
         return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/users/${uid}.json`, fetchSettings)
             .then(res => res.json())
     },
+    updateCurrentUser: (uid, data) => {
+        const fetchSettings = {method: 'PATCH', body: JSON.stringify(data)};
+        return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/users/${uid}.json`, fetchSettings)
+            .then(res => res.json())
+    },
     getUserGroup: () => {
         return fetch("https://happybday-d595a.firebaseio.com/ga/wdi/robots/users.json")
             .then(res => res.json())

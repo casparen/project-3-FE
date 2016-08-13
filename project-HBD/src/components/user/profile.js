@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 import helpers from '../../utils/helpers';
 
 class Profile extends Component {
@@ -25,14 +25,14 @@ class Profile extends Component {
     edit(event) {
         console.log("click");
         event.preventDefault();
-        console.log(this.state.response);
+        // console.log(this.state.response);
         return browserHistory.push('/EditProfile')
     }
 
 
     render() {
         const res = this.state.response
-        console.log(res);
+        // console.log(res);
         // console.log(this.state.response);
         // const fbProfile = this.state.response
         // console.log("user:",user);

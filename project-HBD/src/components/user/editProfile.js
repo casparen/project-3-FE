@@ -43,10 +43,13 @@ class EditProfile extends Component {
     this.state.phone === "" ? data.phone = this.state.response.phone : data.phone = this.state.phone
     this.state.dob === "" ? data.dob = this.state.response.dob : data.dob = this.state.dob
 
-    console.log(data);
+    // console.log(data);
 
-
-
+    let uid = (window.localStorage.getItem("uid"))
+   //  console.log(uid);
+    helpers.updateCurrentUser(uid, data).then((res) => {
+      console.log(res);
+    })
     return browserHistory.push('/profile')
   }
 
