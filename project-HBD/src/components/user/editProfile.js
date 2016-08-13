@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import helper2 from "../utils/helper2";
-import _ from "lodash";
-import '../styles/editProfile.css'
-import {Link, Router, Route, browserHistory} from 'react-router'
+import {browserHistory} from 'react-router';
+import helper2 from "../../utils/helper2";
 
 
 
@@ -52,11 +50,11 @@ class EditProfile extends Component {
 
 
   render(){
-    const res = this.state.response
+    // const res = this.state.response
     return (
       <div className="wrapper">
         <div className="container">
-          <img src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
+          <img role="presentation" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
           <form className="FormContainer">
             <input type="text"
               onChange={(event) => this.setState({name: event.target.value})} value={this.state.response.name}></input>

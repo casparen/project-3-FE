@@ -3,12 +3,17 @@ import FacebookLogin from 'react-facebook-login';
 import _ from "lodash";
 import App from "./App";
 import helpers from "../utils/helpers";
+<<<<<<< HEAD
 import Form from './form.js'
 import {Router, Route, browserHistory} from 'react-router'
 import {Jumbotron} from 'react-bootstrap';
 import '../styles/splash.css';
 
 
+=======
+// import Form from './form.js'
+import {browserHistory} from 'react-router'
+>>>>>>> master
 
 class Splash extends Component {
     constructor(props) {
@@ -24,7 +29,9 @@ class Splash extends Component {
         };
     };
 
+    // response from facebook
     responseFacebook = (response) => {
+<<<<<<< HEAD
           //  console.log(response);
            if (response.accessToken.length > 0) {
                this.setState({fbStatus: 'true',
@@ -116,67 +123,88 @@ class Splash extends Component {
    export default Splash
 
 
+=======
+        if (response.accessToken.length > 0) {
+            this.setState({
+                fbStatus: 'true',
+                fbEmail: response.email,
+                fbObject: response
+            });
+            // store id, email and token in local storage
+            window.localStorage.setItem("uid", response.id);
+            window.localStorage.setItem("email", response.email);
+            window.localStorage.setItem("accessToken", response.accessToken);
 
-{/*const data = {};
-data[response.id] = {
-  name: response.name,
-  email: response.email,
-  url: response.picture.data.url,
-  token: response.accessToken,
-  id: response.id
+            console.log("fbStataus:", this.state.fbStatus);
+            console.log("sent data to db");
+        }
+
+        // if
+        if (this.state.fbStatus === 'true') {
+            helpers.checkForMatch().then(res => {
+                let user = _.values(res).filter(each => each.email === this.state.fbEmail);
+                // console.log("userinfo: ", user[0]);
+                console.log("user;", user, user.length);
+                // console.log("no matching data");
+                if (user.length <= 0) {
+                    this.setState({
+                        user: user[0],
+                        matchStatus: "false"
+                    })
+                }
+                else if (user.length >= 0) {
+                    this.setState({
+                        user: user[0],
+                        matchStatus: "true"
+                    })
+                }
+            })
+        }
+    };
+>>>>>>> master
+
+    render() {
+        if (this.state.fbStatus === 'true' && this.state.matchStatus === 'false') {
+            console.log("go to form");
+            // const res = this.state.fbObject;
+            return browserHistory.push('/form')
+        }
+        else if (this.state.fbStatus === 'true' && this.state.matchStatus === 'true') {
+            return (
+                <App fbObject={this.state.fbObject}/>
+            )
+        }
+        return (
+            <div>
+                <h1>this is splash</h1>
+                <FacebookLogin
+                    appId="1822141354680309"
+                    autoLoad={true}
+                    fields="name,email,picture"
+                    callback={this.responseFacebook}
+                    cssClass="my-facebook-button-class"
+                    icon="fa-facebook"
+                />
+            </div>
+        )
+    }
 }
-helpers.addToDB(data).then((res) => {
-    console.log(res);
-})*/}
+
+export default Splash;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// {/*const data = {};
+//  data[response.id] = {
+//  name: response.name,
+//  email: response.email,
+//  url: response.picture.data.url,
+//  token: response.accessToken,
+//  id: response.id
+//  }
+//  helpers.addToDB(data).then((res) => {
+//  console.log(res);
+//  })*/
+// }
 
 
 // import React, {Component} from 'react';

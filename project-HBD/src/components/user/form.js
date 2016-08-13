@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {browserHistory} from 'react-router';
-import Helper from '../utils/helpers.js';
+import Helper from '../../utils/helpers.js';
 import '../styles/form.css';
 
 class SignUpForm extends Component {
