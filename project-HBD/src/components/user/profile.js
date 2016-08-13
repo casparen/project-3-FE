@@ -43,10 +43,10 @@ class Profile extends Component {
             <div className="wrapper">
                 <div className="container">
                     <img role="presentation" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-                    <h2>{res.name}</h2>
-                    <h2>{res.email}</h2>
-                    <h2>{res.dob}</h2>
-
+                    <h2>name: {res.name}</h2>
+                    <h2>email: {res.email}</h2>
+                    <h2>dob: {res.dob}</h2>
+                    <h2>phone: {res.phone}</h2>
                     <button onClick={(event) => this.edit(event)}>Edit</button>
                 </div>
             </div>

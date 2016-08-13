@@ -1,94 +1,70 @@
 import React, { Component } from 'react';
-// import { browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
+import helpers from '../../utils/helpers';
 
 class EditProfile extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-          response: {name: "Harry", number: "+19175172934", dob:"1203", email: "test@test.com"},
-            dob: "",
-           name: '',
-           firstName: "",
-           lastName: "",
+           response: "",
+           dob: "",
+           name: "",
            email: "",
            phone:"",
            day: "",
            month: "",
            year: "",
-           program: "",
-           cohort: ""
        };
-}
 
+       let uid = (window.localStorage.getItem("uid"))
+      //  console.log(uid);
+       helpers.getCurrentUser(uid).then((res) => {
+         this.setState({response: res})
+       })
+}
+// test(event){
+//     event.preventDefault()
+//
+// }
 
   updateProfile(event){
     console.log("click");
     event.preventDefault()
-    console.log("name", this.state.name);
-    console.log("test", this.state.response.name);
-    // if(this.state.name.length < 0){
-    //   this.setState({name: this.state.response.name})
-    //
-    // }
-    // if(this.state.email.length < 0){
-    //   this.setState({email: this.state.response.email})
-    // }
-    // if(this.state.phone.length < 0){
-    //   this.setState({phone: this.state.response.phone})
-    // }
-    // if(this.state.dob.length < 0){
-    //   this.setState({dob: this.state.response.dob})
-    // }
-    //
-    // console.log("name:", this.state.name);
-    // console.log("name:", this.state.name);
-    // console.log("email:",this.state.email);
-    // console.log("phone", this.state.phone);
-    // console.log("dob:", this.state.dob);
-
-    // const data = {
-    //   Name: this.state.name,
-    //   Email: this.state.email,
-    //   DOB: this.state.day + this.state.month,
-    //   Number: this.state.mNumber
-    // }
-    // //
-    // return browserHistory.push('/profile')
-  }
-
-  onChangeName(event){
-    console.log(event.target.value);
-    if (event.target.value.length > 1) {
-      this.setState({name: event.target.value})
+    const data = {
+      name: "",
+      email: "",
+      phone: "",
+      dob: ""
     }
-    else {
-      this.setState({name: this.state.response.name})
-    }
+
+    this.state.name === "" ? data.name = this.state.response.name : data.name = this.state.name
+    this.state.email === "" ? data.email = this.state.response.email : data.email = this.state.email
+    this.state.phone === "" ? data.phone = this.state.response.phone : data.phone = this.state.phone
+    this.state.dob === "" ? data.dob = this.state.response.dob : data.dob = this.state.dob
+
+    console.log(data);
+
+
+
+    return browserHistory.push('/profile')
   }
-
-  // onChangeEmail(event){
-  //
-  // }
-
 
   render(){
+    console.log("testtt", this.name);
     // const res = this.state.response
-    console.log(this.state.response);
     return (
       <div className="wrapper">
         <div className="container">
           <img role="presentation" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
           <form className="FormContainer">
-
-
-
-            <input type="text" onChange={(event) => this.onChangeName(event)}></input>
-            <input type="text" onChange={(event) => this.onChangeEmail(event)}></input>
-            <input type="text" onChange={(event) => this.setState({phone: event.target.value})} value={this.state.response.number}></input>
-            <input type="text" onChange={(event) => this.setState({dob: event.target.value})} value={this.state.response.dob}></input>
+            Name: <input type="text" placeholder={this.state.response.name} onChange={(event) => this.setState({name: event.target.value})} ></input>
+            Email: <input type="text" placeholder={this.state.response.email} onChange={(event) => this.setState({email: event.target.value})} ></input>
+            Phone: <input type="text" placeholder={this.state.response.phone} onChange={(event) => this.setState({phone: event.target.value})} ></input>
+            Dob: <input type="text" placeholder={this.state.response.dob} onChange={(event) => this.setState({dob: event.target.value})}></input>
           </form>
           <button onClick={(event) => this.updateProfile(event)}>GO</button>
+
         </div>
       </div>
 
