@@ -15,6 +15,9 @@ class Profile extends Component {
       Program: '',
       Cohort: ''
     }
+
+
+    
     helper2.getUser().then((res) => {
       console.log(res);
       this.setState({response: res})

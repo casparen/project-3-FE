@@ -1,13 +1,25 @@
 import firebase from 'firebase';
 
 const firebaseUtils = {
-    signUp: (email, pass) => {
+    signUp: (email, pass, data) => {
         console.log("signing up...", email, pass);
         firebase.auth().createUserWithEmailAndPassword(email, pass).catch(err => {
             if (err) {
                 console.error(err.code, err.message)
             }
-        });
+        }).then(res => {
+          console.log("helper",res);
+          firebase.database().ref("ga/wdi/robots/"+res.uid).set({
+            uid: res.uid,
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            data: data.dob
+          })
+          window.localStorage.setItem("uid", res.uid);
+          console.info(window.localStorage.getItem("uid"));
+          }
+        )
     },
     logIn: (email, pass) => {
         console.log("loggging in...", email, pass);
@@ -16,7 +28,12 @@ const firebaseUtils = {
             if (err) {
                 console.error(err.code, err.message)
             }
-        });
+        }).then(res => {
+          console.log("logged in...",res);
+          window.localStorage.setItem("uid", res.uid);
+          console.info(window.localStorage.getItem("uid"));
+          }
+        );
     },
     logOut: () => {
         console.log("logging out...");
@@ -24,6 +41,9 @@ const firebaseUtils = {
             console.log("successfully logged out");
         }, function(error) {
             // An error happened.
+        }).then(res => {
+          window.localStorage.setItem("uid", null);
+          console.info("logged out!!", window.localStorage.getItem("uid"));
         });
     }
 };

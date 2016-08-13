@@ -5,23 +5,42 @@ class SignUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            name: '',
             email: '',
             pass: '',
+            phone: '',
+            month: '',
+            day: ''
         }
     }
     handleSubmit(e) {
         e.preventDefault();
         console.log("clicked: ", this.state.email, this.state.pass);
-        firebaseUtils.signUp(this.state.email, this.state.pass);
+        let data = {
+          name: this.state.name,
+          email: this.state.email,
+          phone: this.state.phone,
+          dob: this.state.month + this.state.day
+        }
+        firebaseUtils.signUp(this.state.email, this.state.pass, data);
+
+
     }
     render() {
         return (
             <div>
                 <h3>sign up</h3>
                 <form action="">
-                    email: <input type="text" onChange={e => this.setState({email: e.target.value})} /><br/>
-                    password: <input type="text" onChange={e => this.setState({pass: e.target.value})} /><br/>
-                    <button onClick={e => this.handleSubmit(e)}>SIGN UP</button>
+                    name:        <input type="text" placeholder="name" onChange={e => this.setState({name: e.target.value})} /><br/>
+                    email:       <input type="text" placeholder="email" onChange={e => this.setState({email: e.target.value})} /><br/>
+                    password:    <input type="text" placeholder="password" onChange={e => this.setState({pass: e.target.value})} /><br/>
+                    number:      <input type="text" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} /><br/>
+                                 <div>
+                    month:         <input type="text" placeholder="month" onChange={e => this.setState({month: e.target.value})} />
+                    day:           <input type="text" placeholder="day" onChange={e => this.setState({day: e.target.value})} />
+                    year:          <input type="text" placeholder="year" onChange={e => this.setState({year: e.target.value})} /><br/>
+                                </div>
+                  <button onClick={e => this.handleSubmit(e)}>SIGN UP</button>
                 </form>
             </div>
         )
