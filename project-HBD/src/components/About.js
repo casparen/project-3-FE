@@ -19,7 +19,7 @@ class About extends Component {
         return (
             <div className="container">
               <div className="row" id="intro">
-                <h3>ABOUT</h3>
+                <h1>ABOUT</h1>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget sollicitudin purus. Vivamus non massa eu lacus vulputate finibus vel a est. Aenean vitae molestie dolor. Cras efficitur a magna non sodales. Morbi lacus turpis, ultricies ut ipsum eget, accumsan efficitur massa. Phasellus eu dapibus lacus. Maecenas facilisis aliquam eros et faucibus. Cras ultrices hendrerit egestas. Fusce sed tristique magna. Integer varius nibh ac tortor egestas sagittis. Fusce imperdiet lobortis vulputate.
 

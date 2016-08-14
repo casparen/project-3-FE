@@ -30,7 +30,7 @@ ReactDOM.render(
             <Route path='/message/:uid' component={Message}/>
             <Route path='/profile' component={Profile}/>
             <Route path='/EditProfile' component={EditProfile}/>
-            <Route path='/About' component={About}/>
+            <Route path='/about' component={About}/>
         </Route>
     </Router>
     , document.getElementById('root')
