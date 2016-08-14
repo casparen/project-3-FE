@@ -1,25 +1,48 @@
-#rightNav {
+/*#rightNav {
   float: right;
   margin-bottom: 0px;
-}
+}*/
 
-body {
-  /*display: flex;
-  align-content: flex-end;*/
+/*body {
+  display: flex;
+  align-content: flex-end;
   list-style: none;
   font-family: 'Roboto', sans-serif;
-  /*background-image: url('http://bestanimations.com/Holidays/Birthday/happy-birthday-to-you-calligraphy-gold-glitter-animated-greeting-card-gif.gif');
-  background-repeat: no-repeat;*/
-
-}
+}*/
 
 
-.dashboard {
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  margin-top: 10px;
-}
+
 
 .navBar {
-  height: 10vh;
+  margin: auto;
+  display: flex;
+  border: solid pink 1px;
+  /*height: 10vh;*/
+  /*justify-content: center;*/
+  flex-direction: row;
+}
+
+.buttonContainer {
+  display: flex;
+  margin: auto;
+}
+
+.btn {
+  margin-left: 0.2cm;
+  border: solid pink 2px;
+}
+
+
+.leftNav {
+  border: solid blue 1px;
+  display: flex;
+  align-items: flex-start;
+  margin-left: auto;
+}
+
+.dashboard {
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+    font-size: 24px;
+    color: white;
 }
