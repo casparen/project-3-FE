@@ -73,7 +73,7 @@ class EditProfile extends Component {
             <form className="info">
                 <FormControl type="text" placeholder={this.state.response.name} onChange={(event) => this.setState({name: event.target.value})} />
                 <FormControl type="text" placeholder={this.state.response.email} onChange={(event) => this.setState({email: event.target.value})} />
-                <FormControl type="text" placeholder={this.state.response.phone} onChange={(event) => this.setState({phone: event.target.value})} />
+              <FormControl type="text" placeholder={this.state.response.phone} onChange={(event) => this.setState({phone: event.target.value})} />
                 <FormControl type="text" placeholder={this.state.response.dob} onChange={(event) => this.setState({dob: event.target.value})} />
           </form>
           </div>
