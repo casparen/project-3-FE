@@ -67,14 +67,14 @@ class EditProfile extends Component {
             <div className="title">
                   <h5>Name:</h5>
                   <h5>Email:</h5>
-                  <h5>Dob:</h5>
                   <h5>Phone:</h5>
+                  <h5>Dob:</h5>
             </div>
             <form className="info">
                 <FormControl type="text" placeholder={this.state.response.name} onChange={(event) => this.setState({name: event.target.value})} />
                 <FormControl type="text" placeholder={this.state.response.email} onChange={(event) => this.setState({email: event.target.value})} />
-                <FormControl type="text" placeholder={this.state.response.phone} onChange={(event) => this.setState({dob: event.target.value})} />
-                <FormControl type="text" placeholder={this.state.response.dob} onChange={(event) => this.setState({phone: event.target.value})} />
+                <FormControl type="text" placeholder={this.state.response.phone} onChange={(event) => this.setState({Phone: event.target.value})} />
+                <FormControl type="text" placeholder={this.state.response.dob} onChange={(event) => this.setState({dob: event.target.value})} />
           </form>
           </div>
           <Button className="button" bsStyle="primary" bsSize="large" onClick={(event) => this.updateProfile(event)} block>GO</Button>
