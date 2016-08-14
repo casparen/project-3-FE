@@ -30,11 +30,11 @@ class App extends Component {
                 <div className="dropdown">
                 <MenuItem eventKey={3.1}>
                     <Link to='/profile'>
-                        <Button bsStyle="primary" bsSize="small" block className="userBtn">Your Profile</Button>
+                        <Button className="userBtn" bsStyle="primary" bsSize="small" block>Your Profile</Button>
                     </Link>
                 </MenuItem>
                 <MenuItem eventKey={3.2}>
-                    <Button bsStyle="danger" bsSize="small" block className="userBtn" onClick={e => this.handleClick()}>Log Out</Button>
+                    <Button className="userBtn" bsStyle="danger" bsSize="small" block onClick={e => this.handleClick()}>Log Out</Button>
                 </MenuItem>
                 </div>
             </NavDropdown>

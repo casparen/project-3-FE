@@ -1,21 +1,23 @@
 #basic-nav-dropdown {
   display: flex;
-  margin-left: 900px;
   width: 200px;
   align-items: flex-end;
+  font-size: 20px;
+}
+
+.userBtn {
+  margin: 2px;
+  width: 150px;
+  width: 200px;
 }
 
 .dropdown{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 165px;
+  width: 215px;
 }
 
-.userBtn {
-  margin: 2px;
-  width: 150px;
-}
 
 .navBar {
   margin: auto;
@@ -28,7 +30,6 @@
 
 .buttonContainer {
   display: flex;
-  margin-left: 900px;
 }
 
 .btn {
