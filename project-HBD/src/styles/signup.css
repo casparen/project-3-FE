@@ -1,8 +1,5 @@
-img {
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-}
+
+
 .title {
   display: flex;
   flex-direction: column;
@@ -35,4 +32,40 @@ form {
 input {
   margin-bottom: 10px;
   width: 245px;
+}
+
+
+.SignUpWrapper {
+  /*height: 500px;*/
+  /*width: 15cm;*/
+  margin-top: 2cm;
+  border: solid red 2px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.9;
+  /*justify-content: center;*/
+}
+
+.formContainerSignUp {
+  padding: 1cm;
+  justify-content: center;
+  /*border: solid red 1px;*/
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+
+  height: 500px;
+}
+
+.image {
+  /*width: 100vw;
+  height: 100vh;*/
+  margin: auto;
+    position: absolute;
+}
+
+.imageContainer {
+
+  display: flex;
+
 }

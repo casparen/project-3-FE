@@ -9,6 +9,7 @@ import Message from './components/message';
 import SignUp from './components/user/signUp';
 import LogIn from './components/user/logIn';
 import EditProfile from './components/user/editProfile';
+import About from './components/About';
 import './styles/index.css';
 
 const config = {
@@ -26,9 +27,10 @@ ReactDOM.render(
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/signup' component={SignUp} />
             <Route path='/login' component={LogIn} />
-            <Route path='/message/:uid' component={Message} />
-            <Route path='/profile' component={Profile} />
-            <Route path='/EditProfile' component={EditProfile} />
+            <Route path='/message/:uid' component={Message}/>
+            <Route path='/profile' component={Profile}/>
+            <Route path='/EditProfile' component={EditProfile}/>
+            <Route path='/About' component={About}/>
         </Route>
     </Router>
     , document.getElementById('root')
