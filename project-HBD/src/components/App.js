@@ -23,11 +23,11 @@ class App extends Component {
             <NavDropdown eventKey={1} title="USERNAME" id="basic-nav-dropdown">
                 <MenuItem eventKey={3.1}>
                     <Link to='/profile'>
-                        <Button bsStyle="primary" bsSize="small" block>Your Profile</Button>
+                        <Button bsStyle="primary" bsSize="small" block className="userBtn">Your Profile</Button>
                     </Link>
                 </MenuItem>
                 <MenuItem eventKey={3.2}>
-                    <Button bsStyle="danger" bsSize="small" block onClick={e => this.handleClick()}>Log Out</Button>
+                    <Button bsStyle="danger" bsSize="small" block className="userBtn" onClick={e => this.handleClick()}>Log Out</Button>
                 </MenuItem>
             </NavDropdown>
           </Nav>
