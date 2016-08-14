@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { browserHistory } from 'react-router';
 import helpers from '../../utils/helpers';
+import '../../styles/profile.css';
+import { Button, block, FormGroup } from 'react-bootstrap';
 
 class Profile extends Component {
     constructor(props) {
@@ -41,14 +43,24 @@ class Profile extends Component {
 
         return (
             <div className="wrapper">
-                <div className="container">
-                    <img role="presentation" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-                    <h2>name: {res.name}</h2>
-                    <h2>email: {res.email}</h2>
-                    <h2>dob: {res.dob}</h2>
-                    <h2>phone: {res.phone}</h2>
-                    <button onClick={(event) => this.edit(event)}>Edit</button>
+                  <img role="presentation" className="profilePic" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
+                <div className="formContainer">
+                  <div className="title">
+                        <h5>Name:</h5>
+                        <h5>Email:</h5>
+                        <h5>Dob:</h5>
+                        <h5>Phone:</h5>
+                  </div>
+                  <div className="info">
+                    <h5>{res.name}</h5>
+                    <h5>{res.email}</h5>
+                    <h5>{res.dob}</h5>
+                    <h5>{res.phone}</h5>
+                  </div>
                 </div>
+
+                  <Button className="button" bsStyle="warning" bsSize="large"  onClick={(event) => this.edit(event)} block>Edit</Button>
+
             </div>
 
         );

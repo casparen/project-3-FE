@@ -1,0 +1,57 @@
+.wrapper {
+  border: solid red 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+}
+
+
+.profilePic {
+  margin: auto;
+  border-radius: 50%;
+  width: 25%;
+  height: 25%;
+}
+
+
+.info {
+    padding-left: 0.5cm;
+    margin: auto;
+    /*border: solid blue 1px;*/
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.textContainer {
+  border: solid black 1px;
+}
+
+
+
+.title {
+  display: flex;
+  flex-direction: column;
+  /*border: solid black 1px;*/
+  margin: auto;
+}
+
+
+.formContainer {
+
+  justify-content: center;
+  /*border: solid red 1px;*/
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+
+.button {
+
+  margin: auto;
+  width: 6.5cm;
+}
