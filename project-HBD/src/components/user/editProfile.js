@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import helpers from '../../utils/helpers';
+import '../../styles/profile.css';
+import { Button, FormControl, block, FormGroup } from 'react-bootstrap';
+
+
 
 class EditProfile extends Component {
   constructor(props) {
@@ -30,12 +34,12 @@ class EditProfile extends Component {
 
   updateProfile(event){
     console.log("click");
-    event.preventDefault()
+    // event.preventDefault()
     const data = {
       name: "",
       email: "",
-      phone: "",
-      dob: ""
+      dob: "",
+      phone: ""
     }
 
     this.state.name === "" ? data.name = this.state.response.name : data.name = this.state.name
@@ -58,17 +62,23 @@ class EditProfile extends Component {
     // const res = this.state.response
     return (
       <div className="wrapper">
-        <div className="container">
-          <img role="presentation" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-          <form className="FormContainer">
-            Name: <input type="text" placeholder={this.state.response.name} onChange={(event) => this.setState({name: event.target.value})} ></input>
-            Email: <input type="text" placeholder={this.state.response.email} onChange={(event) => this.setState({email: event.target.value})} ></input>
-            Phone: <input type="text" placeholder={this.state.response.phone} onChange={(event) => this.setState({phone: event.target.value})} ></input>
-            Dob: <input type="text" placeholder={this.state.response.dob} onChange={(event) => this.setState({dob: event.target.value})}></input>
+          <img className="profilePic" role="presentation" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
+          <div className="formContainer">
+            <div className="title">
+                  <h5>Name:</h5>
+                  <h5>Email:</h5>
+                  <h5>Dob:</h5>
+                  <h5>Phone:</h5>
+            </div>
+            <form className="info">
+                <FormControl type="text" placeholder={this.state.response.name} onChange={(event) => this.setState({name: event.target.value})} />
+                <FormControl type="text" placeholder={this.state.response.email} onChange={(event) => this.setState({email: event.target.value})} />
+                <FormControl type="text" placeholder={this.state.response.phone} onChange={(event) => this.setState({dob: event.target.value})} />
+                <FormControl type="text" placeholder={this.state.response.dob} onChange={(event) => this.setState({phone: event.target.value})} />
           </form>
-          <button onClick={(event) => this.updateProfile(event)}>GO</button>
+          </div>
+          <Button className="button" bsStyle="primary" bsSize="large" onClick={(event) => this.updateProfile(event)} block>GO</Button>
 
-        </div>
       </div>
 
     )
@@ -82,15 +92,15 @@ export default EditProfile;
 
 
 // {/*          <form className="FormContainer">
-//             <input type="text"
-//               onChange={(event) => this.setState({name: event.target.value})} value={this.state.response.name}></input>
-//             <input type="text"
+//             <FormControl type="text"
+//               onChange={(event) => this.setState({name: event.target.value})} value={this.state.response.name}></FormControl>
+//             <FormControl type="text"
 //               onChange={(event) => this.setState({email: event.target.value})}
-//               value={this.state.response.email}></input>
-//             <input type="text"
+//               value={this.state.response.email}></FormControl>
+//             <FormControl type="text"
 //               onChange={(event) => this.setState({phone: event.target.value})}
-//               value={this.state.response.email}></input>
-//               <input type="text"
+//               value={this.state.response.email}></FormControl>
+//               <FormControl type="text"
 //                 onChange={(event) => this.setState({day: event.target.value})}
-//                 value={this.state.response.dob}></input>
+//                 value={this.state.response.dob}></FormControl>
 //           </form>*/}
