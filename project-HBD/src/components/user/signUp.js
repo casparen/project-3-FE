@@ -34,8 +34,10 @@ class SignUp extends Component {
     }
     render() {
         return (
-            <div className="wrapper">
-                <h3 className="title">Sign Up</h3><br/>
+              <div className="wrapper">
+                <div className="background"><img src="https://media.giphy.com/media/lfAmTSkxUv9io/giphy.gif"/></div><br/>
+                <h3 className="title">Sign Up</h3><br/><br/>
+
                 <form action="" onSubmit={e => this.handleSubmit(e)}>
                   <FormGroup className="form" bsSize="small">
                     name:        <br/><input type="text" placeholder="name" onChange={e => this.setState({name: e.target.value})} /><br/>

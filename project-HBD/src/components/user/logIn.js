@@ -21,9 +21,9 @@ class LogIn extends Component {
     };
     render() {
         return (
+          <div className="background"><img src="http://i.giphy.com/mzvNZsSok3Rao.gif"/>
 
             <Modal.Dialog className="wrapper static-modal">
-
               <div className="formContainer">
                 <div className="title">
                       <h5>Email:</h5>
@@ -39,6 +39,7 @@ class LogIn extends Component {
               </div>
 
             </Modal.Dialog>
+          </div>
 
 
         )

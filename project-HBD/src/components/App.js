@@ -21,6 +21,7 @@ class App extends Component {
         const isLoggedIn = (
           <Nav>
             <NavDropdown eventKey={1} title="USERNAME" id="basic-nav-dropdown">
+                <div className="dropdown">
                 <MenuItem eventKey={3.1}>
                     <Link to='/profile'>
                         <Button bsStyle="primary" bsSize="small" block className="userBtn">Your Profile</Button>
@@ -29,6 +30,7 @@ class App extends Component {
                 <MenuItem eventKey={3.2}>
                     <Button bsStyle="danger" bsSize="small" block className="userBtn" onClick={e => this.handleClick()}>Log Out</Button>
                 </MenuItem>
+                </div>
             </NavDropdown>
           </Nav>
         );
