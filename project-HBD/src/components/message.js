@@ -48,12 +48,14 @@ class Message extends Component {
         const imgUrl = this.state.response.fixed_height_downsampled_url;
         // console.info("params: ", this.props.params.uid);
         return (
-            <div>
-                <Image name="" src={imgUrl} responsive thumbnail/><br/>
-                <textarea rows="6" cols="50" placeholder="leave your birthday message here"
+            <div className="message">
+                <form onSubmit={e => this.handleSubmit(e, imgUrl)}>
+                    <Image className="giphy" src={imgUrl} responsive thumbnail/><br/>
+                <textarea rows="6" cols="100" placeholder="leave your birthday message here"
                           onChange={e => this.setState({text: e.target.value})}/><br />
-                <Button onClick={e => this.onClick(e)}>Refresh</Button>
-                <Button onClick={e => this.handleSubmit(e, imgUrl)}>Submit</Button>
+                    <Button bsStyle="primary" onClick={e => this.onClick(e)}>Refresh</Button>
+                    <Button type="submit" bsStyle="success">Submit</Button>
+                </form>
             </div>
         );
     };
