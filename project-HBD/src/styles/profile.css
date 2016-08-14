@@ -1,11 +1,15 @@
-.wrapper {
+body .wrapper {
   /*border: solid red 1px;*/
   flex-direction: column;
   justify-content: center;
-
+  height: auto;
+  margin-top: 20px;
 
 }
+body h5 {
+  font-weight: strong;
 
+}
 
 .profilePic {
   margin: auto;
