@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router'
+import {Link} from 'react-router';
 
 const DashboardListItem = ({user}) => {
     return (
@@ -8,7 +8,7 @@ const DashboardListItem = ({user}) => {
             <div>
                 Name: {user.name}
                 Birthday: {user.dob}
-                Mobile Number:
+                Mobile Number: 
                 email: {user.email}
             </div>
             <div>

@@ -7,11 +7,12 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            response: ''
+            response: '',
         };
-        helpers.checkForMatch()
+        helpers.getUserGroup()
             .then(res => {
                 let user = _.values(res).filter(each => each);
+                console.log(user);
                 this.setState({response: user});
                 console.log("state: ", this.state.response);
             })
