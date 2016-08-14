@@ -1,13 +1,15 @@
 #basic-nav-dropdown {
   display: flex;
   margin-left: 900px;
+  width: 200px;
+  align-items: flex-end;
 }
 
 .dropdown{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 200px;
+  width: 165px;
 }
 
 .userBtn {
@@ -37,7 +39,8 @@
 .leftNav {
   display: flex;
   align-items: flex-start;
-  margin-left: 20px;
+  margin-left: 10px;
+  width: 200px;
 }
 
 .dashboard {

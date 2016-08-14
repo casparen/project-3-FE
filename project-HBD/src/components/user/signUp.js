@@ -35,7 +35,7 @@ class SignUp extends Component {
     render() {
         return (
               <div className="wrapper">
-                <div className="background"><img src="https://media.giphy.com/media/lfAmTSkxUv9io/giphy.gif"/></div><br/>
+                <div className="background"><img src="http://i.giphy.com/mzvNZsSok3Rao.gif"/></div><br/>
                 <h3 className="title">Sign Up</h3><br/><br/>
 
                 <form action="" onSubmit={e => this.handleSubmit(e)}>
