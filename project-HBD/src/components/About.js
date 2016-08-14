@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
-import helpers from '../utils/helpers';
 // import DashboardList from './DashboardList';
-import _ from 'lodash';
-import "../styles/About.css";
+import "../styles/about.css";
 
 class About extends Component {
   constructor() {
