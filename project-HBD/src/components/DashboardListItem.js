@@ -13,7 +13,7 @@ const DashboardListItem = ({user}) => {
                 email: {user.email}
             </div>
             <div>
-                <Link to={{pathname:`/message/${user.uid}`, params: {uid: user.uid}}}>
+                <Link to={{pathname:`/message/${user.uid}`}}>
                     <button>Link to message</button>
                 </Link>
             </div>

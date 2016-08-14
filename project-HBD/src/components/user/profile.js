@@ -48,14 +48,14 @@ class Profile extends Component {
                   <div className="title">
                         <h5>Name:</h5>
                         <h5>Email:</h5>
-                        <h5>Dob:</h5>
                         <h5>Phone:</h5>
+                        <h5>Dob:</h5>
                   </div>
                   <div className="info">
                     <h5>{res.name}</h5>
                     <h5>{res.email}</h5>
-                    <h5>{res.dob}</h5>
                     <h5>{res.phone}</h5>
+                    <h5>{res.dob}</h5>
                   </div>
                 </div>
 

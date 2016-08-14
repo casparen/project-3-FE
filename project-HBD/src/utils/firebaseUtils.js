@@ -9,17 +9,17 @@ const firebaseUtils = {
                 console.error(err.code, err.message)
             }
         }).then(res => {
-          console.log("helper",res);
-          firebase.database().ref("ga/wdi/robots/users/"+res.uid).set({
-            uid: res.uid,
-            name: data.name,
-            email: data.email,
-            phone: data.phone,
-            dob: data.dob
-          })
-          window.localStorage.setItem("uid", res.uid);
-          console.info(window.localStorage.getItem("uid"));
-          }
+                console.log("helper", res);
+                firebase.database().ref("ga/wdi/robots/users/" + res.uid).set({
+                    uid: res.uid,
+                    name: data.name,
+                    email: data.email,
+                    phone: data.phone,
+                    dob: data.dob
+                })
+                window.localStorage.setItem("uid", res.uid);
+                console.info(window.localStorage.getItem("uid"));
+            }
         )
     },
     logIn: (email, pass) => {
@@ -30,21 +30,22 @@ const firebaseUtils = {
                 console.error(err.code, err.message)
             }
         }).then(res => {
-          console.log("logged in...", res);
-          window.localStorage.setItem("uid", res.uid);
-          console.info(window.localStorage.getItem("uid"));
-          }
+                console.log("logged in...", res);
+                window.localStorage.setItem("uid", res.uid);
+                console.info(window.localStorage.getItem("uid"));
+            }
         );
     },
     logOut: () => {
         console.log("logging out...");
         firebase.auth().signOut().then(() => {
             console.log("successfully logged out");
-        }, function(error) {
-            // An error happened.
+        }, function (error) {
+            console.error("error: ", error)
         }).then(res => {
-          window.localStorage.setItem("uid", "");
-          console.info("logged out!!", window.localStorage.getItem("uid"));
+            console.log(res);
+            window.localStorage.setItem("uid", "");
+            console.info("logged out!!", window.localStorage.getItem("uid"));
         });
     }
 };
