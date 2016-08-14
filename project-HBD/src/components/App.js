@@ -33,21 +33,25 @@ class App extends Component {
           </Nav>
         );
         const isLoggedOut = (
-            <div>
+            <div className="buttonContainer">
                 <Link to='/signup'>
-                    <Button bsStyle="primary">Sign Up</Button>
+                    <Button bsStyle="primary" className="btn">Sign Up</Button>
                 </Link>
-                <Link to='/login'>
-                    <Button bsStyle="success">Log In</Button>
+                <Link to='/login' >
+                    <Button bsStyle="success" className="btn">Log In</Button>
                 </Link>
             </div>
         );
 
         return (
             <div>
-                <Navbar inverse fluid className="navBar">
-                    <Link to='/dashboard'><h3 className="dashboard">Dashboard</h3></Link>
-                    {this.state.isLoggedin.length > 0 ? isLoggedIn : isLoggedOut}
+                <Navbar inverse fluid>
+                    <div className="navBar">
+                      <div className="leftNav">
+                        <Link to='/dashboard' className="dashboard">Dashboard</Link>
+                      </div>
+                      {this.state.isLoggedin.length > 0 ? isLoggedIn : isLoggedOut}
+                    </div>
                 </Navbar>
                 {this.props.children}
             </div>
