@@ -3,6 +3,7 @@ import firebase from 'firebase';
 const firebaseUtils = {
     signUp: (email, pass, data) => {
         console.log("signing up...", email, pass);
+        console.info("data", data);
         firebase.auth().createUserWithEmailAndPassword(email, pass).catch(err => {
             if (err) {
                 console.error(err.code, err.message)

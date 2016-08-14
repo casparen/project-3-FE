@@ -13,8 +13,6 @@ class SignUp extends Component {
             email: '',
             pass: '',
             phone: '',
-            month: '',
-            day: ''
         }
     }
     handleSubmit(e) {
@@ -29,7 +27,7 @@ class SignUp extends Component {
           name: this.state.name,
           email: this.state.email,
           phone: "+1" + this.state.phone,
-          dob: this.state.dob
+          dob: dob
         }
         firebaseUtils.signUp(this.state.email, this.state.pass, data);
         return browserHistory.push("/");
