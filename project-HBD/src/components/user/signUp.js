@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {browserHistory} from 'react-router';
 import firebaseUtils from '../../utils/firebaseUtils';
 import Datepicker from 'react-bootstrap-date-picker';
+import { Button, FormGroup } from 'react-bootstrap';
+import '../../styles/signup.css';
 
 class SignUp extends Component {
     constructor(props) {
@@ -34,17 +36,24 @@ class SignUp extends Component {
     }
     render() {
         return (
-            <div>
-                <h3>sign up</h3>
+            <div className="wrapper">
+                <h3 className="title">Sign Up</h3><br/>
                 <form action="" onSubmit={e => this.handleSubmit(e)}>
-                    name:        <input type="text" placeholder="name" onChange={e => this.setState({name: e.target.value})} /><br/>
-                    email:       <input type="email" placeholder="email" onChange={e => this.setState({email: e.target.value})} /><br/>
-                    password:    <input type="password" placeholder="password" onChange={e => this.setState({pass: e.target.value})} /><br/>
-                    number:      <input type="text" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} /><br/>
-                    <div>
-                      <Datepicker /><br/>
-                    </div>
-                  <button type="submit">SIGN UP</button>
+                  <FormGroup className="form" bsSize="small">
+                    name:        <br/><input type="text" placeholder="name" onChange={e => this.setState({name: e.target.value})} /><br/>
+                  email:         <br/><input type="email" placeholder="email" onChange={e => this.setState({email: e.target.value})} /><br/>
+                password:        <br/><input type="password" placeholder="password" onChange={e => this.setState({pass: e.target.value})} /><br/>
+              number:            <br/><input type="text" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} /><br/>
+                  <div className="calendar">
+                    birthday: <Datepicker />
+                  </div>
+                    <br/>
+                    <br/>
+                    <hr></hr>
+                    <br/>
+                  <Button className="signup" bsStyle="success" type="submit">Sign Up</Button>
+                </FormGroup>
+
                 </form>
 
             </div>

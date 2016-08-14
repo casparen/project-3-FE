@@ -1,0 +1,25 @@
+#rightNav {
+  float: right;
+  margin-bottom: 0px;
+}
+
+body {
+  /*display: flex;
+  align-content: flex-end;*/
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+  /*background-image: url('http://bestanimations.com/Holidays/Birthday/happy-birthday-to-you-calligraphy-gold-glitter-animated-greeting-card-gif.gif');
+  background-repeat: no-repeat;*/
+
+}
+
+
+.dashboard {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 10px;
+}
+
+.navBar {
+  height: 10vh;
+}

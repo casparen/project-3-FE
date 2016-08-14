@@ -1,0 +1,33 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  /*border: solid black 1px;*/
+  margin: auto;
+}
+
+
+.calendar {
+  width: 152px;
+  height: 26px;
+}
+
+
+
+.signup {
+  margin: auto;
+  width: 6.5cm;
+}
+
+
+form {
+  display: inline-block;
+  width: 300px;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  margin-bottom: 10px;
+  width: 245px;
+}
