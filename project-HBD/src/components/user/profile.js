@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { browserHistory } from 'react-router';
 import helpers from '../../utils/helpers';
 import '../../styles/profile.css';
-import { Button, block, FormGroup } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 class Profile extends Component {
     constructor(props) {

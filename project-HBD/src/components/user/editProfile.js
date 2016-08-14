@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import helpers from '../../utils/helpers';
 import '../../styles/profile.css';
-import { Button, FormControl, block, FormGroup } from 'react-bootstrap';
+import { Button, FormControl } from 'react-bootstrap';
 
 
 
@@ -32,7 +32,7 @@ class EditProfile extends Component {
 //
 // }
 
-  updateProfile(event){
+  updateProfile() {
     console.log("click");
     // event.preventDefault()
     const data = {
