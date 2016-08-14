@@ -34,7 +34,7 @@ class EditProfile extends Component {
 
   updateProfile(event){
     console.log("click");
-    event.preventDefault()
+    // event.preventDefault()
     const data = {
       name: "",
       email: "",

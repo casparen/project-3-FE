@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import {browserHistory} from 'react-router';
 import firebaseUtils from '../../utils/firebaseUtils';
+import '../../styles/login.css'
+import { Button, FormControl, Modal} from 'react-bootstrap';
+
 
 class LogIn extends Component {
     constructor(props) {
@@ -18,14 +21,26 @@ class LogIn extends Component {
     };
     render() {
         return (
-            <div>
-                <h3>LOG IN</h3>
-                <form action="">
-                    email: <input type="text" onChange={e => this.setState({email: e.target.value})} /><br/>
-                    password: <input type="text" onChange={e => this.setState({pass: e.target.value})} /><br/>
-                    <button onClick={e => this.handleSubmit(e)}>LOG IN</button>
-                </form>
-            </div>
+
+            <Modal.Dialog className="wrapper static-modal">
+
+              <div className="formContainer">
+                <div className="title">
+                      <h5>Name:</h5>
+                      <h5>Password:</h5>
+                </div>
+                  <form className="input" action="">
+                      <FormControl type="text" onChange={e => this.setState({email: e.target.value})} />
+                      <FormControl type="text" onChange={e => this.setState({pass: e.target.value})} />
+                  </form>
+                  <div className="btnContainer">
+                    <Button className="button" bsStyle="primary" bsSize="large" onClick={e => this.handleSubmit(e)} block>LOG IN</Button>
+                  </div>
+              </div>
+
+            </Modal.Dialog>
+
+
         )
     };
 }
