@@ -48,6 +48,12 @@ class App extends Component {
                 <Link to='/login' >
                     <Button bsStyle="success" className="btn">Log In</Button>
                 </Link>
+                <Link to='/About' >
+                    <Button bsStyle="success" className="btn">About</Button>
+                </Link>
+                <Link to='/dashboard'>
+                  <Button bsStyle="warning" className="btn">Dashboard</Button>
+                  </Link>
             </div>
         );
 
@@ -56,7 +62,8 @@ class App extends Component {
                 <Navbar inverse fluid>
                     <div className="navBar">
                       <div className="leftNav">
-                        <Link to='/dashboard' className="dashboard">Dashboard</Link>
+                        <p className="dashboard">GiphyBirthday</p>
+
                       </div>
                       {this.state.isLoggedin.length > 0 ? isLoggedIn : isLoggedOut}
                     </div>
