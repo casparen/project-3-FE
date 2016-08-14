@@ -26,7 +26,7 @@ ReactDOM.render(
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/signup' component={SignUp} />
             <Route path='/login' component={LogIn} />
-            <Route path='/message' component={Message}/>
+            <Route path='/message/:uid' component={Message}/>
             <Route path='/profile' component={Profile}/>
             <Route path='/EditProfile' component={EditProfile}/>
         </Route>

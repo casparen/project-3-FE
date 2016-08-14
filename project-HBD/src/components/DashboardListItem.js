@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 
 const DashboardListItem = ({user}) => {
+    // const user = this.props.user;
     return (
         <li>
             <div>Profile Pic</div>
@@ -12,12 +13,12 @@ const DashboardListItem = ({user}) => {
                 email: {user.email}
             </div>
             <div>
-                <Link to={{pathname:"/message", params: {text: "hi"}}}>
+                <Link to={{pathname:`/message/${user.uid}`, params: {uid: user.uid}}}>
                     <button>Link to message</button>
                 </Link>
             </div>
         </li>
     )
-}
+};
 
 export default DashboardListItem;
