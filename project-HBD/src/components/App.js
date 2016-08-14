@@ -34,6 +34,11 @@ class App extends Component {
                     </Link>
                 </MenuItem>
                 <MenuItem eventKey={3.2}>
+                    <Link to='/dashboard'>
+                    <Button className="userBtn" bsStyle="primary" bsSize="small" block>Dashboard</Button>
+                    </Link>
+                </MenuItem>
+                <MenuItem eventKey={3.3}>
                     <Button className="userBtn" bsStyle="danger" bsSize="small" block onClick={e => this.handleClick()}>Log Out</Button>
                 </MenuItem>
                 </div>
@@ -56,7 +61,7 @@ class App extends Component {
                 <Navbar inverse fluid>
                     <div className="navBar">
                       <div className="leftNav">
-                        <Link to='/dashboard' className="dashboard">Dashboard</Link>
+                        <Link to='/dashboard' className="dashboard">HBD Message Delivery</Link>
                       </div>
                       {this.state.isLoggedin.length > 0 ? isLoggedIn : isLoggedOut}
                     </div>
