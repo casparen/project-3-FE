@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet" type="text/css">
+    <title>React App</title>
+  <link rel="shortcut icon" href="/favicon.ico"><style type="text/css">#basic-nav-dropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 20px;
+}
+
+.userBtn {
+  margin: 2px;
+  width: 150px;
+  width: 200px;
+}
+
+.dropdown{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 215px;
+}
+
+
+.navBar {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 8px;
+  /*height: 10vh;*/
+  /*justify-content: center;*/
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn {
+  margin-left: 0.2cm;
+}
+
+
+.leftNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 10px;
+  width: 200px;
+}
+
+.dashboard {
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+    font-size: 24px;
+    color: white;
+}
+</style><style type="text/css">.wrapper {
+  /*border: solid red 1px;*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+
+}
+
+
+.profilePic {
+  margin: auto;
+  border-radius: 50%;
+  width: 25%;
+  height: 25%;
+}
+
+
+.info {
+    padding-left: 0.5cm;
+    margin: auto;
+    /*border: solid blue 1px;*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+
+}
+
+
+.textContainer {
+  border: solid black 1px;
+}
+
+
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*border: solid black 1px;*/
+  margin: auto;
+}
+
+
+.formContainer {
+
+  -webkit-box-pack: center;
+
+      -ms-flex-pack: center;
+
+          justify-content: center;
+  /*border: solid red 1px;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: auto;
+}
+
+
+.button {
+  margin: auto;
+  width: 6.5cm;
+}
+</style><style type="text/css">img {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  /*border: solid black 1px;*/
+  margin: auto;
+}
+
+
+.calendar {
+  width: 152px;
+  height: 26px;
+}
+
+
+
+.signup {
+  margin: auto;
+  width: 6.5cm;
+}
+
+
+form {
+  display: inline-block;
+  width: 300px;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  margin-bottom: 10px;
+  width: 245px;
+}
+</style><style type="text/css">img {
+  height: 80vh;
+  width: 100vw;
+}
+
+.wrapper {
+  margin-top: 2em;
+  height: auto;
+  /*border: solid red 1px;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+  /*justify-content: center;*/
+}
+
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*border: solid black 1px;*/
+  margin: auto;
+}
+.formContainer {
+
+  padding: 1cm;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /*border: solid red 1px;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: auto;
+}
+
+
+
+.input {
+  padding-left: 0.2cm;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  /*border: solid blue 1px;*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+
+.btnContainer {
+    /*border: solid blue 1px;*/
+  margin: auto;
+padding-left: 0.2cm;
+
+}
+
+.button {
+  height: 1.8cm;
+  margin: auto;
+  width: 3cm;
+}
+</style><style type="text/css">body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+</style></head>
+  <body>
+    <div id="root"><div data-reactroot=""><nav class="navbar navbar-inverse"><div class="container-fluid"><div class="navBar"><div class="leftNav"><a class="dashboard" href="/dashboard">Dashboard</a></div><div class="buttonContainer"><a href="/signup"><button type="button" class="btn btn btn-primary">Sign Up</button></a><a href="/login"><button type="button" class="btn btn btn-success">Log In</button></a></div></div></div></nav><div class="wrapper"><img role="presentation" class="profilePic" src="https://pickaface.net/assets/images/slides/slide2.png"><div class="formContainer"><div class="title"><h5>Name:</h5><h5>Email:</h5><h5>Dob:</h5><h5>Phone:</h5></div><div class="info"><h5>Alberto Gomez</h5><h5>aeg407@nyu.edu</h5><h5></h5><h5>2017804856</h5></div></div><button type="button" class="button btn btn-lg btn-warning btn-block">Edit</button></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` in this folder.
+  To create a production bundle, use `npm run build`.
+-->
+<script type="text/javascript" src="/static/js/bundle.js"></script>
+
+</body></html>
