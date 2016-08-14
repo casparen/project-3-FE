@@ -1,0 +1,13 @@
+body {
+  width: 100%;
+  /*background: green;*/
+}
+
+#map-here {
+  width: 100vw;
+  height: 50vh;
+}
+
+#autocomplete {
+  z-index: 777;
+}

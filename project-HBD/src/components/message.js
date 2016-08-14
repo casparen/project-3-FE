@@ -38,7 +38,7 @@ onClick(event){
 render(){
   const result = this.state.response;
   const img = result.fixed_height_downsampled_url;
-
+  console.info("params: ", this.props.params);
   return (
     <div>
         <img src={img} alt="giphy"></img><br/>

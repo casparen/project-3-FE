@@ -26,12 +26,12 @@ class LogIn extends Component {
 
               <div className="formContainer">
                 <div className="title">
-                      <h5>Name:</h5>
+                      <h5>Email:</h5>
                       <h5>Password:</h5>
                 </div>
                   <form className="input" action="">
-                      <FormControl type="text" onChange={e => this.setState({email: e.target.value})} />
-                      <FormControl type="text" onChange={e => this.setState({pass: e.target.value})} />
+                      <FormControl type="email" onChange={e => this.setState({email: e.target.value})} />
+                      <FormControl type="password" onChange={e => this.setState({pass: e.target.value})} />
                   </form>
                   <div className="btnContainer">
                     <Button className="button" bsStyle="primary" bsSize="large" onClick={e => this.handleSubmit(e)} block>LOG IN</Button>

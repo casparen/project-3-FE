@@ -43,7 +43,7 @@ class SignUp extends Component {
                     name:        <br/><input type="text" placeholder="name" onChange={e => this.setState({name: e.target.value})} /><br/>
                   email:         <br/><input type="email" placeholder="email" onChange={e => this.setState({email: e.target.value})} /><br/>
                 password:        <br/><input type="password" placeholder="password" onChange={e => this.setState({pass: e.target.value})} /><br/>
-              number:            <br/><input type="text" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} /><br/>
+              number:            <br/><input type="tel" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} /><br/>
                   <div className="calendar">
                     birthday: <Datepicker />
                   </div>

@@ -8,11 +8,11 @@ const DashboardListItem = ({user}) => {
             <div>
                 Name: {user.name}
                 Birthday: {user.dob}
-                Mobile Number: 
+                Mobile Number: {user.phone}
                 email: {user.email}
             </div>
             <div>
-                <Link to='/message'>
+                <Link to={{pathname:"/message", params: {text: "hi"}}}>
                     <button>Link to message</button>
                 </Link>
             </div>
