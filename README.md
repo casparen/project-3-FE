@@ -24,8 +24,9 @@ Technologies used: Twilio API, Giphy API, Firebase Database and Authentication, 
 3. Use Firebase for authentication
 4. Create profile page for new users and allow them to edit information
 5. Use firebase to store new user information and edited user information
+6. Use React Router for navigation
 
 ## Responsibilities and Contributions
 As a team we spent a day brainstorming the perfect app that would solve a common problem. We came up with so many ideas that ultimately we came up with a birthday reminder, since we tend to forget people's birthdays, especially with our busy schedules. After some wireframing sessions and mild panic attacks during feasibility testing to figure out whether or not we can make this app work, we deliver you our MVP.
 
-We went through planning, regression testing, unit testing, UI testing, lots of development, and debugging. Caspar and Harry took the lead on making sure we were in the right direction in terms of logic of the app, which was crucial in getting the firebase authentication and database to work. Al and Mimi worked on the wireframing, researched, tested several API and was also involved in the development and design of the app in React. 
+We went through planning, regression testing, unit testing, UI testing, lots of development, and debugging. Caspar and Harry took the lead on making sure we were in the right direction in terms of logic of the app, which was crucial in getting the firebase authentication and database to work. Al and Mimi worked on the wireframing, researched, tested several API and was also involved in the development and design of the app in React.
