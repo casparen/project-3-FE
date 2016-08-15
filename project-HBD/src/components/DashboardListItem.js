@@ -1,25 +1,33 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {Button, Panel} from 'react-bootstrap';
+import {Button, Panel, Well} from 'react-bootstrap';
 import '../styles/dashboard.css';
 
 const DashboardListItem = ({user}) => {
     // const user = this.props.user;
     return (
-        <li className="profileStats">
-            <Panel header={user.name} bsStyle="success">
+        <li className="dashboardListItem">
+            <Panel header={user.name} bsStyle="success" className="dashboard-panel">
                 <div className="avatarContainer">
                     <img className="default" src="http://hackersworld.org/images/profile.png" role="presentation"/>
                 </div>
                 <div className="userInfoContainer">
-                    Name: {user.name}
-                    Birthday: {user.dob}
-                    Mobile Number: {user.phone}
-                    email: {user.email}
+                    <div className="tagContainer">
+                        <h5>Name</h5>
+                        <h5>Email</h5>
+                        <h5>Mobile</h5>
+                        <h5>Birthday</h5>
+                    </div>
+                    <div>
+                        <Well>{user.name}</Well>
+                        <Well>{user.email}</Well>
+                        <Well>{user.phone}</Well>
+                        <Well>{user.dob}</Well>
+                    </div>
                 </div>
                 <div className="">
                     <Link to={{pathname:`/message/${user.uid}`}}>
-                        <Button bsStyle="warning">Send a message</Button>
+                        <Button bsStyle="warning">SEND GREETINGS</Button>
                     </Link>
                 </div>
             </Panel>

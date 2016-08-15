@@ -1,21 +1,25 @@
 .titleDashboard {
-font-family: 'Roboto', sans-serif;
-display: flex;
-margin-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    margin-left: 30px;
 }
 
 body {
-  list-style: none;
+    list-style: none;
 }
 
 .default {
-  width: 250px;
-  height: 200px;
+    width: 250px;
+    height: 200px;
 }
 
-.profileStats {
-  list-style: none;
-  font-family: 'Roboto', sans-serif;
-  display: flex;
-  flex-direction: column;
+.dashboard-panel {
+
+}
+
+.dashboardListItem {
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
