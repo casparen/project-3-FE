@@ -1,26 +1,26 @@
-.wrapper {
-  /*border: solid red 1px;*/
+.profileWrapper {
+  border: solid red 1px;
   flex-direction: column;
   justify-content: center;
   height: auto;
   margin-top: 20px;
-
 }
 
 
 
 .profilePic {
-  margin: auto;
+  width: 20%;
+  height: 20%;
+  margin-left: 50%;
   border-radius: 50%;
-  width: 25%;
-  height: 25%;
+
 }
 
 
-.info {
+.profileInfoContainer {
     padding-left: 0.5cm;
     margin: auto;
-    /*border: solid blue 1px;*/
+    border: solid blue 1px;
     display: flex;
     flex-direction: column;
 
@@ -33,7 +33,7 @@
 
 
 
-.title {
+.profileTitle {
   display: flex;
   flex-direction: column;
   /*border: solid black 1px;*/
@@ -41,17 +41,17 @@
 }
 
 
-.formContainer {
+.ProfileFormContainer {
 
   justify-content: center;
-  /*border: solid red 1px;*/
+  border: solid red 1px;
   display: flex;
   flex-direction: row;
   margin: auto;
+  padding: 1cm;
 }
 
-
-.button {
+.EditButton {
   margin: auto;
   width: 6.5cm;
 }
