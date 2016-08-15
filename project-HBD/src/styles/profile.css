@@ -1,5 +1,5 @@
 .profileWrapper {
-  border: solid red 1px;
+  /*border: solid red 1px;*/
   flex-direction: column;
   justify-content: center;
   height: auto;
@@ -24,7 +24,7 @@
 .profileInfoContainer {
     padding-left: 0.5cm;
     margin: auto;
-    border: solid blue 1px;
+    /*border: solid blue 1px;*/
     display: flex;
     flex-direction: column;
 
@@ -32,9 +32,8 @@
 
 
 .textContainer {
-  border: solid black 1px;
+  /*border: solid black 1px;*/
 }
-
 
 
 .profileTitle {
@@ -48,7 +47,8 @@
 .ProfileFormContainer {
 
   justify-content: center;
-  border: solid red 1px;
+  width: 10cm;
+  /*border: solid pink 2px;*/
   display: flex;
   flex-direction: row;
   margin: auto;
