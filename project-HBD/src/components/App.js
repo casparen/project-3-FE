@@ -20,6 +20,10 @@ class App extends Component {
 
     handleClick() {
         firebaseUtils.logOut();
+        Helpers.getCurrentUser(window.localStorage.getItem("uid"))
+            .then(res => {
+                this.setState({currentUser: res})
+            })
         return browserHistory.push("/");
     };
 
@@ -34,9 +38,15 @@ class App extends Component {
                             </Link>
                         </MenuItem>
                         <MenuItem eventKey={3.2}>
+                            <Link to='/dashboard'>
+                                <Button className="userBtn" bsStyle="primary" bsSize="small" block>Dashboard</Button>
+                            </Link>
+                        </MenuItem>
+                        <MenuItem eventKey={3.3}>
                             <Button className="userBtn" bsStyle="danger" bsSize="small" block
                                     onClick={e => this.handleClick()}>Log Out</Button>
                         </MenuItem>
+
                     </div>
                 </NavDropdown>
             </Nav>
