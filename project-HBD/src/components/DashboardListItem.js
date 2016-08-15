@@ -7,22 +7,24 @@ const DashboardListItem = ({user}) => {
     // const user = this.props.user;
     return (
         <li className="dashboardListItem">
-            <Panel header={user.name} bsStyle="success" className="dashboard-panel">
-                <div className="avatarContainer">
-                    <img className="default" src="http://hackersworld.org/images/profile.png" role="presentation"/>
-                </div>
-                <div className="userInfoContainer">
-                    <div className="tagContainer">
-                        <h5>Name</h5>
-                        <h5>Email</h5>
-                        <h5>Mobile</h5>
-                        <h5>Birthday</h5>
+            <Panel header={user.name} bsStyle="success">
+                <div className="dashboard-panel">
+                    <div className="avatarContainer">
+                        <img className="dashboardAvatar" src="http://hackersworld.org/images/profile.png" role="presentation"/>
                     </div>
-                    <div>
-                        <Well>{user.name}</Well>
-                        <Well>{user.email}</Well>
-                        <Well>{user.phone}</Well>
-                        <Well>{user.dob}</Well>
+                    <div className="userInfoContainer">
+                        <div className="tagContainer">
+                            <span>Name:</span><span>{user.name}</span>
+                        </div>
+                        <div className="tagContainer">
+                            <span>Email:</span><span>{user.email}</span>
+                        </div>
+                        <div className="tagContainer">
+                            <span>Mobile:</span><span>{user.phone}</span>
+                        </div>
+                        <div className="tagContainer">
+                            <span>Birthday:</span><span>{user.dob}</span>
+                        </div>
                     </div>
                 </div>
                 <div className="">

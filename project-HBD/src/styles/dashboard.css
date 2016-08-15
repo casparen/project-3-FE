@@ -7,14 +7,28 @@
 body {
     list-style: none;
 }
-
-.default {
-    width: 250px;
-    height: 200px;
+.DashboardList {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
-
-.dashboard-panel {
-
+.dashboardAvatar {
+    height: 150px;
+    width: 150px;
+}
+.dashboardPanel {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.userInfoContainer {
+    display: flex;
+    flex-direction: column;
+}
+.tagContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .dashboardListItem {
@@ -22,4 +36,5 @@ body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
+    width: 200px;
 }
