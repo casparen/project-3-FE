@@ -53,8 +53,9 @@ class EditProfile extends Component {
         // const res = this.state.response
         return (
             <div className="profileWrapper">
-                <img className="profilePic" role="presentation"
-                     src="https://pickaface.net/assets/images/slides/slide2.png"/>
+              <div className="picContainer">
+                <img className="profilePic" role="presentation"src="https://pickaface.net/assets/images/slides/slide2.png"/>
+              </div>
                 <div className="ProfileFormContainer">
                     <div className="profileTitle">
                         <h5>Name:</h5>

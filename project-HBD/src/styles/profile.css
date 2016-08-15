@@ -9,11 +9,16 @@
 
 
 .profilePic {
-  width: 20%;
-  height: 20%;
-  margin-left: 50%;
-  border-radius: 50%;
+  margin: auto;
+  image-resolution: snap;
+  max-width: 20%;
+ height: auto;
+}
+.picContainer {
 
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 
