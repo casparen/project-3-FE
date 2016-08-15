@@ -74,7 +74,7 @@ class EditProfile extends Component {
                                      onChange={(event) => this.setState({dob: event.target.value})}/>
                     </form>
                 </div>
-                <Button className="button" bsStyle="primary" bsSize="large"
+                <Button className="EditButton" bsStyle="primary" bsSize="large"
                         onClick={(event) => this.updateProfile(event)} block>GO</Button>
             </div>
 

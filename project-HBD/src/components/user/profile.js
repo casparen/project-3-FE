@@ -43,8 +43,10 @@ class Profile extends Component {
 
         return (
             <div className="profileWrapper">
-                <img role="presentation" className="profilePic"
-                     src="https://pickaface.net/assets/images/slides/slide2.png"/>
+              <div className="picContainer">
+                <img role="presentation" className="profilePic" src="https://pickaface.net/assets/images/slides/slide2.png"/>
+              </div>
+
                 <div className="ProfileFormContainer">
                     <div className="profileTitle">
                         <h5>Name:</h5>
