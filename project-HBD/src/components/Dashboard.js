@@ -11,7 +11,7 @@ class Dashboard extends Component {
             response: '',
         };
         // realtime firebase user info
-        var userRef = firebase.database().ref("ga/wdi/robots/users").orderByChild("dob");
+        var userRef = firebase.database().ref("ga/wdi/robots/users");
         userRef.on("value", snapshot => {
             console.log("snapshot", snapshot.val());
             let res = snapshot.val();
