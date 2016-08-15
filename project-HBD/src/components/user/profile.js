@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { browserHistory } from 'react-router';
+import {browserHistory} from 'react-router';
 import helpers from '../../utils/helpers';
 import '../../styles/profile.css';
-import { Button } from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 class Profile extends Component {
     constructor(props) {
@@ -17,14 +17,14 @@ class Profile extends Component {
             Program: '',
             Cohort: ''
         };
-        let uid = (window.localStorage.getItem("uid"))
+        let uid = (window.localStorage.getItem("uid"));
         console.log(uid);
-        helpers.getCurrentUser(uid).then((res) => {
-          this.setState({response: res})
+        helpers.getCurrentUser(uid).then(res => {
+            this.setState({response: res})
         })
     }
 
-    edit(event) {
+    handleClickEdit(event) {
         console.log("click");
         event.preventDefault();
         // console.log(this.state.response);
@@ -33,7 +33,7 @@ class Profile extends Component {
 
 
     render() {
-        const res = this.state.response
+        const res = this.state.response;
         // console.log(res);
         // console.log(this.state.response);
         // const fbProfile = this.state.response
@@ -43,22 +43,24 @@ class Profile extends Component {
 
         return (
             <div className="profileWrapper">
-                <img role="presentation" className="profilePic" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-                <div> className="ProfileFormContainer">
-                  <div className="profileTitle">
+                <img role="presentation" className="profilePic"
+                     src="https://pickaface.net/assets/images/slides/slide2.png"/>
+                <div className="ProfileFormContainer">
+                    <div className="profileTitle">
                         <h5>Name:</h5>
                         <h5>Email:</h5>
                         <h5>Phone:</h5>
                         <h5>Dob:</h5>
-                  </div>
-                  <div className="profileInfoContainer">
-                    <h5>{res.name}</h5>
-                    <h5>{res.email}</h5>
-                    <h5>{res.phone}</h5>
-                    <h5>{res.dob}</h5>
-                  </div>
+                    </div>
+                    <div className="profileInfoContainer">
+                        <h5>{res.name}</h5>
+                        <h5>{res.email}</h5>
+                        <h5>{res.phone}</h5>
+                        <h5>{res.dob}</h5>
+                    </div>
                 </div>
-                <Button className="EditButton" bsStyle="warning" bsSize="large"  onClick={(event) => this.edit(event)} block>Edit</Button>
+                <Button className="EditButton" bsStyle="warning" bsSize="large" onClick={e => this.handleClickEdit(e)}
+                        block>Edit</Button>
 
             </div>
 

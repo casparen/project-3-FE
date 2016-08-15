@@ -7,7 +7,7 @@ const DashboardListItem = ({user}) => {
     // const user = this.props.user;
     return (
         <li className="profileStats">
-            <div><img className="default" src="http://hackersworld.org/images/profile.png"/></div>
+            <div><img className="default" src="http://hackersworld.org/images/profile.png" role="presentation"/></div>
             <div>
                 Name: {user.name} 
                 Birthday: {user.dob}
