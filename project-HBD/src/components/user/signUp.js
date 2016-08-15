@@ -37,23 +37,27 @@ class SignUp extends Component {
             <div className="background">
                 <Modal.Dialog className="SignUpWrapper static-modal">
                     <div className="formContainerSignUp">
-                        <div className="tagContainer">
-                          <h5>Name</h5>
-                          <h5>Email</h5>
-                          <h5>Password</h5>
-                          <h5>Number</h5>
-                          <h5>Birthday</h5>
-                        </div>
-
-                        <form action="" className="SingupInput" >
-                            <FormControl type="text" placeholder="name" onChange={e => this.setState({name: e.target.value})} />
-                            <FormControl type="email" placeholder="email" onChange={e => this.setState({email: e.target.value})} />
-                            <FormControl type="password" placeholder="password" onChange={e => this.setState({pass: e.target.value})} />
-                            <FormControl type="tel" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} />
-                            <Datepicker className="calendar" />
+                        <form action="" className="SingupInput" onSubmit={e => this.handleSubmit(e)}>
+                            <div className="tagContainer">
+                                <h5>Name</h5>
+                                <h5>Email</h5>
+                                <h5>Password</h5>
+                                <h5>Number</h5>
+                                <h5>Birthday</h5>
+                            </div>
+                            <div className="fieldContainer">
+                                <FormControl type="text" placeholder="name" onChange={e => this.setState({name: e.target.value})} />
+                                <FormControl type="email" placeholder="email" onChange={e => this.setState({email: e.target.value})} />
+                                <FormControl type="password" placeholder="password" onChange={e => this.setState({pass: e.target.value})} />
+                                <FormControl type="tel" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} />
+                                <div className="calendar">
+                                    <Datepicker className="calendar" />
+                                </div>
+                            </div>
+                            <Button type="submit" className="signupButton" bsStyle="primary" bsSize="small" >Sign Up</Button>
                         </form>
                         <div className="buttonContainer">
-                          <Button type="submit" className="signupButton" bsStyle="primary" bsSize="large" onClick={e => this.handleSubmit(e)} block>Sign Up</Button>
+
                         </div>
                     </div>
 
