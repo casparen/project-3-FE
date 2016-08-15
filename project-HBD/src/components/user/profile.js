@@ -42,24 +42,23 @@ class Profile extends Component {
         // console.log("profile", window.localStorage.getItem('accessToken'));
 
         return (
-            <div className="wrapper">
-                  <img role="presentation" className="profilePic" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-                <div className="formContainer">
-                  <div className="title">
+            <div className="profileWrapper">
+                <img role="presentation" className="profilePic" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
+                <div> className="ProfileFormContainer">
+                  <div className="profileTitle">
                         <h5>Name:</h5>
                         <h5>Email:</h5>
                         <h5>Phone:</h5>
                         <h5>Dob:</h5>
                   </div>
-                  <div className="info">
+                  <div className="profileInfoContainer">
                     <h5>{res.name}</h5>
                     <h5>{res.email}</h5>
                     <h5>{res.phone}</h5>
                     <h5>{res.dob}</h5>
                   </div>
                 </div>
-
-                  <Button className="button" bsStyle="warning" bsSize="large"  onClick={(event) => this.edit(event)} block>Edit</Button>
+                <Button className="EditButton" bsStyle="warning" bsSize="large"  onClick={(event) => this.edit(event)} block>Edit</Button>
 
             </div>
 

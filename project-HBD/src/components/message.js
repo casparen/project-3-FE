@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Helpers from '../utils/helpers.js';
 import {Image, Button} from 'react-bootstrap';
+import '../styles/message.css';
 
 class Message extends Component {
     constructor() {
@@ -48,14 +49,13 @@ class Message extends Component {
         const imgUrl = this.state.response.fixed_height_downsampled_url;
         // console.info("params: ", this.props.params.uid);
         return (
-            <div className="message">
-                <form onSubmit={e => this.handleSubmit(e, imgUrl)}>
-                    <Image className="giphy" src={imgUrl} responsive thumbnail/><br/>
-                <textarea rows="6" cols="100" placeholder="leave your birthday message here"
+            <div className="giphyMessage">
+                <Image className="giphy" src={imgUrl} responsive thumbnail/><br/>
+                <textarea rows="6" cols="50" placeholder="leave your birthday message here"
                           onChange={e => this.setState({text: e.target.value})}/><br />
-                    <Button bsStyle="primary" onClick={e => this.onClick(e)}>Refresh</Button>
-                    <Button type="submit" bsStyle="success">Submit</Button>
-                </form>
+                <Button className="giphyBtn" bsStyle="warning" onClick={e => this.onClick(e)}>Refresh</Button>
+                <Button className="giphyBtn" bsStyle="success"
+                        onClick={e => this.handleSubmit(e, imgUrl)}>Submit</Button>
             </div>
         );
     };
