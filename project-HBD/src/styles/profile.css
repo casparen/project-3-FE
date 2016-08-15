@@ -1,4 +1,4 @@
-body .wrapper {
+.wrapper {
   /*border: solid red 1px;*/
   flex-direction: column;
   justify-content: center;
@@ -6,10 +6,8 @@ body .wrapper {
   margin-top: 20px;
 
 }
-body h5 {
-  font-weight: strong;
 
-}
+
 
 .profilePic {
   margin: auto;

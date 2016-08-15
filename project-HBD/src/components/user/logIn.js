@@ -21,7 +21,7 @@ class LogIn extends Component {
     };
     render() {
         return (
-          <div className="background">
+          <div className="backgroundLogin">
             <Modal.Dialog className="logInWrapper static-modal">
               <div className="formContainer">
                 <div className="title">
@@ -30,14 +30,14 @@ class LogIn extends Component {
                 </div>
                   <form className="input" action="">
                       <FormControl type="email" onChange={e => this.setState({email: e.target.value})} />
-                      <FormControl type="password" onChange={e => this.setState({pass: e.target.value})} />
+                      <FormControl  type="password" onChange={e => this.setState({pass: e.target.value})} />
                   </form>
                   <div className="btnContainer">
                     <Button className="button" bsStyle="primary" bsSize="large" onClick={e => this.handleSubmit(e)} block>LOG IN</Button>
                   </div>
               </div>
-
             </Modal.Dialog>
+            <img className="img" src="http://i.giphy.com/mzvNZsSok3Rao.gif"></img>
           </div>
 
 

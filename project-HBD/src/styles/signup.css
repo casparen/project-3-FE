@@ -1,9 +1,14 @@
 
 
-.title {
+.tagContainer {
+  /*border: solid black 1px;*/
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto', sans-serif;
+  /*border: solid black 1px;*/
+  margin: auto;
+}
+
+.SingupInput {
   /*border: solid black 1px;*/
   margin: auto;
 }
@@ -16,56 +21,56 @@
 
 
 
-.signup {
+.signupButton {
+  height: 4.5cm;
   margin: auto;
-  width: 6.5cm;
+  width: 3cm;
 }
 
 
-form {
-  display: inline-block;
-  width: 300px;
+.buttonContainer {
+  /*border: solid black 1px;*/
   margin: auto;
-  font-family: 'Roboto', sans-serif;
+padding-left: 0.2cm;
+
 }
 
-input {
-  margin-bottom: 10px;
-  width: 245px;
-}
 
 
 .SignUpWrapper {
-  /*height: 500px;*/
-  /*width: 15cm;*/
-  margin-top: 2cm;
-  border: solid red 2px;
-  display: flex;
+  /*background-image: url('http://i.giphy.com/mzvNZsSok3Rao.gif');*/
+  background-size: cover;
+  margin-top: 3cm;
+  /*border: solid red 2px;*/
   flex-direction: column;
-  opacity: 0.9;
-  /*justify-content: center;*/
+  z-index: -1;
 }
 
 .formContainerSignUp {
+  margin: auto;
   padding: 1cm;
   justify-content: center;
-  /*border: solid red 1px;*/
+  /*border: solid red 3px;*/
   display: flex;
   flex-direction: row;
   margin: auto;
+    opacity: 0.8;
+}
 
-  height: 500px;
+.SingupInput {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.2cm;
+}
+
+
+.background {
+  margin-top: -2.5cm;
 }
 
 .image {
-  /*width: 100vw;
-  height: 100vh;*/
+  opacity: 0.6;
+  position: relative;
   margin: auto;
-    position: absolute;
-}
-
-.imageContainer {
-
-  display: flex;
-
+  z-index: -3;
 }
