@@ -1,0 +1,19 @@
+.giphy {
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+  margin: auto;
+}
+
+.giphyMessage {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  flex-direction: column;
+  width: 371px;
+  height: 500px;
+}
+
+.giphyBtn {
+  margin: 2px;
+}
