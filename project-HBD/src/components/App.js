@@ -55,7 +55,7 @@ class App extends Component {
                 <Link to='/login'>
                     <Button bsStyle="success" className="btn">Log In</Button>
                 </Link>
-                <Link to='/login'>
+                <Link to='/about'>
                     <Button bsStyle="success" className="btn">About</Button>
                 </Link>
             </div>
