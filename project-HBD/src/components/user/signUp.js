@@ -50,12 +50,10 @@ class SignUp extends Component {
                             <FormControl type="email" placeholder="email" onChange={e => this.setState({email: e.target.value})} />
                             <FormControl type="password" placeholder="password" onChange={e => this.setState({pass: e.target.value})} />
                             <FormControl type="tel" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} />
-                            <div className="calendar">
-                              <Datepicker />
-                            </div>
+                            <Datepicker className="calendar" />
                         </form>
                         <div className="buttonContainer">
-                          <Button className="signupButton" bsStyle="primary" bsSize="large" onClick={e => this.handleSubmit(e)} block>Sign Up</Button>
+                          <Button type="submit" className="signupButton" bsStyle="primary" bsSize="large" onClick={e => this.handleSubmit(e)} block>Sign Up</Button>
                         </div>
                     </div>
 
