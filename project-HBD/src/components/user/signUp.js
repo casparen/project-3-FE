@@ -35,36 +35,35 @@ class SignUp extends Component {
     render() {
         return (
             <div className="background">
-                <Modal.Dialog className="SignUpWrapper static-modal">
-                    <div className="formContainerSignUp">
-                        <form action="" className="SingupInput" onSubmit={e => this.handleSubmit(e)}>
-                            <div className="tagContainer">
-                                <h5>Name</h5>
-                                <h5>Email</h5>
-                                <h5>Password</h5>
-                                <h5>Number</h5>
-                                <h5>Birthday</h5>
-                            </div>
-                            <div className="fieldContainer">
-                                <FormControl type="text" placeholder="name" onChange={e => this.setState({name: e.target.value})} />
-                                <FormControl type="email" placeholder="email" onChange={e => this.setState({email: e.target.value})} />
-                                <FormControl type="password" placeholder="password" onChange={e => this.setState({pass: e.target.value})} />
-                                <FormControl type="tel" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} />
-                                <div className="calendar">
-                                    <Datepicker className="calendar" />
-                                </div>
-                            </div>
-                            <Button type="submit" className="signupButton" bsStyle="primary" bsSize="small" >Sign Up</Button>
-                        </form>
-                        <div className="buttonContainer">
+                  <Modal.Dialog className="SignUpWrapper static-modal">
+                      <div className="formContainerSignUp">
+                          <form action="" className="SingupInput" onSubmit={e => this.handleSubmit(e)}>
+                              <div className="tagContainer">
+                                  <h5>Name</h5>
+                                  <h5>Email</h5>
+                                  <h5>Password</h5>
+                                  <h5>Number</h5>
+                                  <h5>Birthday</h5>
+                              </div>
+                              <div className="fieldContainer">
+                                  <FormControl type="text" placeholder="name" onChange={e => this.setState({name: e.target.value})} />
+                                  <FormControl type="email" placeholder="email" onChange={e => this.setState({email: e.target.value})} />
+                                  <FormControl type="password" placeholder="password" onChange={e => this.setState({pass: e.target.value})} />
+                                  <FormControl type="tel" placeholder="phone number" onChange={e => this.setState({phone: e.target.value})} />
+                                  <div className="calendar">
+                                      <Datepicker className="calendar" />
+                                  </div>
+                              </div>
+                              <Button type="submit" className="signupButton" bsStyle="primary" bsSize="small" >Sign Up</Button>
+                          </form>
+                          <div className="buttonContainer">
 
-                        </div>
-                    </div>
+                          </div>
+                      </div>
+                 </Modal.Dialog>
 
-               </Modal.Dialog>
-               <div className="imageContainer">
-                 <img className="image" src="http://i.giphy.com/mzvNZsSok3Rao.gif" role="presentation" />
-               </div>
+                 <img className="imgBackground" src="http://i.giphy.com/mzvNZsSok3Rao.gif" role="presentation" />
+      
             </div>
         )
     }
