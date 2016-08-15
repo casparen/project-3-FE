@@ -14,7 +14,7 @@ class App extends Component {
         };
         Helpers.getCurrentUser(window.localStorage.getItem("uid"))
             .then(res => {
-                this.setState({currentUser: res})
+                this.setState({currentUser: res.name})
             })
     };
 
@@ -26,7 +26,7 @@ class App extends Component {
     render() {
         const isLoggedIn = (
             <Nav>
-                <NavDropdown eventKey={1} title="Dropdown" id="basic-nav-dropdown">
+                <NavDropdown eventKey={1} title={this.state.currentUser} id="basic-nav-dropdown">
                     <div className="dropdown">
                         <MenuItem eventKey={3.1}>
                             <Link to='/profile'>
