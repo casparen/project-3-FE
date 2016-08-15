@@ -34,10 +34,10 @@ class EditProfile extends Component {
             phone: ""
         };
 
-        // this.state.name === "" ? data.name = this.state.response.name : data.name = this.state.name;
-        // this.state.email === "" ? data.email = this.state.response.email : data.email = this.state.email;
-        // this.state.phone === "" ? data.phone = this.state.response.phone : data.phone = this.state.phone;
-        // this.state.dob === "" ? data.dob = this.state.response.dob : data.dob = this.state.dob;
+        this.state.name === "" ? data.name = this.state.response.name : data.name = this.state.name;
+        this.state.email === "" ? data.email = this.state.response.email : data.email = this.state.email;
+        this.state.phone === "" ? data.phone = this.state.response.phone : data.phone = this.state.phone;
+        this.state.dob === "" ? data.dob = this.state.response.dob : data.dob = this.state.dob;
 
         // console.log(data);
         let uid = (window.localStorage.getItem("uid"));
