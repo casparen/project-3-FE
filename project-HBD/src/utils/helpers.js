@@ -15,10 +15,6 @@ const Helpers = {
         return fetch(`https://happybday-d595a.firebaseio.com/ga/wdi/robots/users/${uid}.json`, fetchSettings)
             .then(res => res.json())
     },
-    getUserGroup: () => {
-        return fetch("https://happybday-d595a.firebaseio.com/ga/wdi/robots/users.json")
-            .then(res => res.json())
-    },
     // to backend server
     sendMessage: (data) => {
         const fetchSettings = {

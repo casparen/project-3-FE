@@ -9,7 +9,7 @@ body {
 }
 .DashboardList {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 .dashboardAvatar {
@@ -27,7 +27,7 @@ body {
 }
 .tagContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
 }
 

@@ -12,6 +12,7 @@ class App extends Component {
             isLoggedin: window.localStorage.getItem("uid") || "",
             currentUser: ""
         };
+        
         Helpers.getCurrentUser(window.localStorage.getItem("uid"))
             .then(res => {
                 this.setState({currentUser: res.name})
