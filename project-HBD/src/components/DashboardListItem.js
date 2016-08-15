@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {Button, Panel, Well} from 'react-bootstrap';
+import {Button, Panel} from 'react-bootstrap';
 import '../styles/dashboard.css';
 
 const DashboardListItem = ({user}) => {
