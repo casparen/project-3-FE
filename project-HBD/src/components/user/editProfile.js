@@ -61,21 +61,21 @@ class EditProfile extends Component {
     console.log("testtt", this.name);
     // const res = this.state.response
     return (
-      <div className="wrapper">
+      <div className="profileWrapper">
           <img className="profilePic" role="presentation" src="https://pickaface.net/assets/images/slides/slide2.png" className="profilePic"></img>
-          <div className="formContainer">
-            <div className="title">
+          <div className="ProfileFormContainer">
+            <div className="profileTitle">
                   <h5>Name:</h5>
                   <h5>Email:</h5>
                   <h5>Phone:</h5>
                   <h5>Dob:</h5>
             </div>
-            <form className="info">
+            <form className="profileInfoContainer">
                 <FormControl type="text" placeholder={this.state.response.name} onChange={(event) => this.setState({name: event.target.value})} />
                 <FormControl type="text" placeholder={this.state.response.email} onChange={(event) => this.setState({email: event.target.value})} />
-              <FormControl type="text" placeholder={this.state.response.phone} onChange={(event) => this.setState({phone: event.target.value})} />
+                <FormControl type="text" placeholder={this.state.response.phone} onChange={(event) => this.setState({phone: event.target.value})} />
                 <FormControl type="text" placeholder={this.state.response.dob} onChange={(event) => this.setState({dob: event.target.value})} />
-          </form>
+            </form>
           </div>
           <Button className="button" bsStyle="primary" bsSize="large" onClick={(event) => this.updateProfile(event)} block>GO</Button>
 
