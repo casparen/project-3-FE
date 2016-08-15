@@ -20,10 +20,6 @@ class App extends Component {
 
     handleClick() {
         firebaseUtils.logOut();
-        Helpers.getCurrentUser(window.localStorage.getItem("uid"))
-            .then(res => {
-                this.setState({currentUser: res})
-            })
         return browserHistory.push("/");
     };
 
@@ -59,6 +55,9 @@ class App extends Component {
                 <Link to='/login'>
                     <Button bsStyle="success" className="btn">Log In</Button>
                 </Link>
+                <Link to='/login'>
+                    <Button bsStyle="success" className="btn">About</Button>
+                </Link>
             </div>
         );
 
@@ -67,7 +66,7 @@ class App extends Component {
                 <Navbar inverse fluid>
                     <div className="navBar">
                         <div className="leftNav">
-                            <Link to='/dashboard' className="dashboard">HBD Message Delivery</Link>
+                            <Link to='/dashboard' className="dashboard">GiphyBirthday</Link>
                         </div>
                         {this.state.isLoggedin.length > 0 ? isLoggedIn : isLoggedOut}
                     </div>

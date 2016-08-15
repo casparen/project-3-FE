@@ -61,7 +61,7 @@ class SignUp extends Component {
 
                </Modal.Dialog>
                <div className="imageContainer">
-                 <img className="image" src="http://i.giphy.com/mzvNZsSok3Rao.gif"></img>
+                 <img className="image" src="http://i.giphy.com/mzvNZsSok3Rao.gif" role="presentation" />
                </div>
             </div>
         )
@@ -70,4 +70,4 @@ class SignUp extends Component {
 export default SignUp
 
 
-{/*                  <img className="image" src="http://i.giphy.com/mzvNZsSok3Rao.gif"></img>*/}
+// <img className="image" src="http://i.giphy.com/mzvNZsSok3Rao.gif"></img>

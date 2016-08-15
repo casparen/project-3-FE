@@ -37,7 +37,7 @@ class LogIn extends Component {
                   </div>
               </div>
             </Modal.Dialog>
-            <img className="img" src="http://i.giphy.com/mzvNZsSok3Rao.gif"></img>
+            <img className="img" src="http://i.giphy.com/mzvNZsSok3Rao.gif" role="presentation" />
           </div>
 
 
